@@ -14,7 +14,7 @@ var languages = {
   indonesian: "id",
 };
 
-async function translate(lang = "en") {
+translate = async (lang = "en") => {
   // Deep copy
   let data_copy = JSON.parse(JSON.stringify(data));
 
@@ -30,21 +30,29 @@ async function translate(lang = "en") {
   }
 
   return data_copy;
-}
+};
 
-// waits for each language to be completed
-(async () => {
+writeToFile = async (lang) => {
+  console.log(languages[lang]);
+  fs.writeFile(
+    `${languages[lang]}.json`,
+    JSON.stringify(await translate(languages[lang])),
+    (e) => {
+      if (e) throw e;
+    }
+  );
+};
+
+translate_languages = async () => {
   for (var lang in languages) {
     //   waits for request to be completed
-    await (async () => {
-      console.log(languages[lang]);
-      fs.writeFile(
-        `${languages[lang]}.json`,
-        JSON.stringify(await translate(languages[lang])),
-        (e) => {
-          if (e) throw e;
-        }
-      );
-    })();
+    try {
+      await writeToFile(lang);
+    } catch (e) {
+      // too many requests
+      console.log(e);
+    }
   }
-})();
+};
+
+translate_languages();
