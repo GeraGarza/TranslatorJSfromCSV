@@ -3,13 +3,12 @@ const data = require('./en.json');
 const fs = require('fs')
 
 var languages = {
-  english: "en",
   spanish: "es",
   japanese: "ja",
   korean: "ko",
   malay: "ms",
-  chinese_simplified: "zh_CN",
-  chinese_traditional: "zh_TW",
+  // chinese_simplified: "zh_CN",
+  // chinese_traditional: "zh_TW",
   thai: 'th',
   indonesian: "id"
 }
@@ -27,6 +26,8 @@ async function translate(lang = "en") {
     }
   }
 
+  await setTimeout(function(){ }, 3000);
+
   return data_copy
 
 }
@@ -35,12 +36,15 @@ async function translate(lang = "en") {
   for (var lang in languages) {
     console.log(lang + " -> " + languages[lang]);
 
-    var newObj = await translate(languages.spanish)
-
-    fs.writeFile(`${languages[lang]}.json`, JSON.stringify(newObj), e => {
-      if (e) throw e
-    })
-    console.log('finished.');
+    try {
+      var newObj = await translate(languages[lang])
+      fs.writeFile(`${languages[lang]}.json`, JSON.stringify(newObj), e => {
+        if (e) throw e
+      })
+      console.log('finished.');
+    } catch (e) {
+      console.log(e)
+    }
 
   }
 })();
