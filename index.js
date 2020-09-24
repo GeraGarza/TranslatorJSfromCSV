@@ -15,6 +15,7 @@ var languages = {
 };
 
 async function translate(lang = "en") {
+  // Deep copy
   let data_copy = JSON.parse(JSON.stringify(data));
 
   for (const property in data) {
@@ -25,16 +26,16 @@ async function translate(lang = "en") {
         to: lang,
       });
       data_copy[property][index] = result.text;
-      //   console.log(data[property][index]);
-      //   console.log(result.text);
     }
   }
 
   return data_copy;
 }
 
+// waits for each language to be completed
 (async () => {
   for (var lang in languages) {
+    //   waits for request to be completed
     await (async () => {
       console.log(languages[lang]);
       fs.writeFile(
