@@ -1,18 +1,41 @@
 {
-    "GLOBAL": {
-   
+  "GLOBAL": {
+
   },
-  
-  "START_PAGE":{
-    "BUTTON_SIGNUP":"SIGN UP",
-    "BUTTON_LOGIN":"LOG IN",
-    "LABEL_START_GOT":"Got a",
-    "LABEL_START_KEY":"key?",
-    "LABEL_START_GR":"Green Room",
-    "LABEL_START_ALREADY_ACCOUNT":"Already have an account?",
-    "CTA_LEARN_MORE_ABOUT_CBRE":"Learn more about CBRE",
-    "START_HEADER":"A place that helps you prepare to join CBRE"  
-    }
-  
+
+  "START_PAGE": {
+    "BUTTON_SIGNUP": "SIGN UP",
+    "BUTTON_LOGIN": "LOG IN",
+    "LABEL_START_GOT": "Got a",
+    "LABEL_START_KEY": "key?",
+    "LABEL_START_GR": "Green Room",
+    "LABEL_START_ALREADY_ACCOUNT": "Already have an account?",
+    "CTA_LEARN_MORE_ABOUT_CBRE": "Learn more about CBRE",
+    "START_HEADER": "A place that helps you prepare to join CBRE"
+  },
+  "ABOUT_PAGE": {
+    "LABEL_ABOUT_CBRE": "About CBRE",
+    "BUTTON_OUR_VALUES": "Our Values",
+    "BUTTON_OUR_HISTORY": "Our History",
+    "BOTTON_CBRE_TODAY": "CBRE Today",
+    "BOTTON_CORPROATE_RESPONSIBILITY": "Corporate Responsibility",
+    "BUTTON_ABOUT_GWS": "About GWS",
+    "BUTTON_WHO_WE SERVE": "Who We Serve",
+    "BUTTON_WHY_JOIN_CBRE": "Why Join CBRE",
+    "BUTTON_CAREERS_AT_CBRE": "Careers at CBRE"
+  },
+  "OUR_VALUES": {
+    "LABEL_VALUES_HEADER": "OUR RISE VALUES",
+    "LABEL_VALUES_DESC": "Behaviors that support our values.",
+    "LABEL_VALUES_SECTION_TITLE": "OUR RISE VALUES",
+    "LABEL_RESPECT": "RESPECT",
+    "LABEL_RESPECT_DESC": "We act with consideration for others' ideas and share information openly to inspire trust and encourage collaboration",
+    "LABEL_INTEGRITY": "INTEGRITY",
+    "LABEL_INTEGRITY_DESC": "No one individual, no one deal, no one client, is bigger than our commitment to our company and what we stand for",
+    "LABEL_SERVICE": "SERVICE",
+    "LABEL_SERVICE_DESC": "We approach our clients' challenges with enthusiasm and diligence, building longterm relationships by connecting the right people, capital and opportunities",
+    "LABEL_EXCELLENCE": "EXCELLENCE",
+    "LABEL_EXCELLENCE_DESC": "We focus relentlessly on creating winning outcomes for our clients, employees and shareholders"
   }
-    
+
+}
