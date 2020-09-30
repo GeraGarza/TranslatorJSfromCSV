@@ -1,0 +1,892 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TrustFrameworkPolicy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns="http://schemas.microsoft.com/online/cpim/schemas/2013/06" PolicySchemaVersion="0.3.0.0" TenantId="{Settings:Tenant}" PolicyId="{Settings:PolicyPrefix}GreenRoom_TrustFrameworkExtensions" PublicPolicyUri="http://{Settings:Tenant}/{Settings:PolicyPrefix}GreenRoom_TrustFrameworkExtensions">
+  <BasePolicy>
+    <TenantId>{Settings:Tenant}</TenantId>
+    <PolicyId>{Settings:PolicyPrefix-Shared}TrustFrameworkExtensions</PolicyId>
+  </BasePolicy>
+  <BuildingBlocks>
+    <ClaimsSchema>
+      <ClaimType Id="givenName">
+        <DisplayName>First Name *</DisplayName>
+      </ClaimType>
+      <ClaimType Id="surname">
+        <DisplayName>Last Name *</DisplayName>
+      </ClaimType>
+      <ClaimType Id="newPassword">
+        <DisplayName>New Password *</DisplayName>
+      </ClaimType>
+      <ClaimType Id="reenterPassword">
+        <DisplayName>Confirm New Password *</DisplayName>
+      </ClaimType>
+      <ClaimType Id="displayName">
+        <DisplayName>Display Name *</DisplayName>
+      </ClaimType>
+      <ClaimType Id="oldPassword">
+        <DisplayName>Old Password</DisplayName>
+        <DataType>string</DataType>
+        <UserHelpText>Enter password</UserHelpText>
+        <UserInputType>Password</UserInputType>
+      </ClaimType>
+      <!--Sample: indicating that magic link sent to the user -->
+      <ClaimType Id="magicLinkSent">
+        <DisplayName>magicLinkSent</DisplayName>
+        <DataType>boolean</DataType>
+      </ClaimType>
+      <!--Sample: Stores the message that an email sent to you-->
+      <ClaimType Id="userMessage">
+        <DisplayName></DisplayName>
+        <DataType>string</DataType>
+        <UserHelpText>Add help text here</UserHelpText>
+        <UserInputType>Paragraph</UserInputType>
+      </ClaimType>
+      <!-- Sample: Read only email address to present to the user-->
+      <ClaimType Id="ReadOnlyEmail">
+        <DisplayName>Verified Email Address</DisplayName>
+        <DataType>string</DataType>
+        <UserInputType>Readonly</UserInputType>
+      </ClaimType>
+      <!--Sample: Stores the error message for unsolicited request (a request without id_token_hint) and user not found-->
+      <ClaimType Id="errorMessage">
+        <DisplayName>Error</DisplayName>
+        <DataType>string</DataType>
+        <UserHelpText>Add help text here</UserHelpText>
+        <UserInputType>Paragraph</UserInputType>
+      </ClaimType>
+      <ClaimType Id="signupOrpwdreset">
+        <DisplayName>signupOrpwdreset</DisplayName>
+        <DataType>string</DataType>
+      </ClaimType>
+      <ClaimType Id="userexistsMessage">
+        <DisplayName></DisplayName>
+        <DataType>string</DataType>
+        <UserHelpText>Add help text here</UserHelpText>
+        <UserInputType>Paragraph</UserInputType>
+      </ClaimType>
+      <ClaimType Id="greenroomkey">
+        <DisplayName>Green Room Key *</DisplayName>
+        <DataType>string</DataType>
+        <UserHelpText>Enter your Green Room Key</UserHelpText>
+        <UserInputType>TextBox</UserInputType>
+      </ClaimType>
+      <ClaimType Id="identityProviderAccessToken">
+        <DisplayName>Identity Provider Access Token</DisplayName>
+        <DataType>string</DataType>
+        <AdminHelpText>Stores the access token of the identity provider.</AdminHelpText>
+      </ClaimType>
+
+      <ClaimType Id="emails">
+        <DisplayName>Emails</DisplayName>
+        <DataType>stringCollection</DataType>
+        <UserHelpText>User's email addresses</UserHelpText>
+      </ClaimType>
+
+      <ClaimType Id="firstOtherMail">
+        <DisplayName>First Other mail</DisplayName>
+        <DataType>string</DataType>
+        <UserHelpText>Other Mail</UserHelpText>
+      </ClaimType>
+
+      <ClaimType Id="objectIdNotFound">
+        <DisplayName>Used for comparison</DisplayName>
+        <DataType>string</DataType>
+      </ClaimType>
+
+      <ClaimType Id="emailsent">
+        <DisplayName>email_sentto</DisplayName>
+        <DataType>string</DataType>
+      </ClaimType>
+      <ClaimType Id="pleaseclick">
+        <DisplayName>please_click</DisplayName>
+        <DataType>string</DataType>
+      </ClaimType>
+      <ClaimType Id="introMessage">
+        <DisplayName>Intro Message</DisplayName>
+        <DataType>string</DataType>
+        <UserInputType>Paragraph</UserInputType>
+      </ClaimType>
+      <ClaimType Id="greenroomkeyIsValid">
+        <DisplayName>Is Green Room Key Valid?</DisplayName>
+        <DataType>boolean</DataType>
+      </ClaimType>
+      <ClaimType Id="userLanguage">
+        <DisplayName>User UI language (used by REST API to return localized error messages)</DisplayName>
+        <DataType>string</DataType>
+      </ClaimType>
+      <ClaimType Id="emailNotReceived">
+        <DisplayName>email Not_Received</DisplayName>
+        <DataType>string</DataType>
+        <UserInputType>Paragraph</UserInputType>
+      </ClaimType>
+
+    </ClaimsSchema>
+
+    <ClaimsTransformations>
+      <!--Sample: Initiates the errorMessage claims type with the error message-->
+      <ClaimsTransformation Id="CreateUnsolicitedErrorMessage" TransformationMethod="CreateStringClaim">
+        <InputParameters>
+          <InputParameter Id="value" DataType="string" Value="You cannot sign-up without invitation" />
+        </InputParameters>
+        <OutputClaims>
+          <OutputClaim ClaimTypeReferenceId="errorMessage" TransformationClaimType="createdClaim" />
+        </OutputClaims>
+      </ClaimsTransformation>
+      <!--Sample: Copy the email to ReadOnlyEmail claim type-->
+      <ClaimsTransformation Id="CopyEmailAddress" TransformationMethod="FormatStringClaim">
+        <InputClaims>
+          <InputClaim ClaimTypeReferenceId="email" TransformationClaimType="inputClaim" />
+        </InputClaims>
+        <InputParameters>
+          <InputParameter Id="stringFormat" DataType="string" Value="{0}" />
+        </InputParameters>
+        <OutputClaims>
+          <OutputClaim ClaimTypeReferenceId="ReadOnlyEmail" TransformationClaimType="outputClaim" />
+        </OutputClaims>
+      </ClaimsTransformation>
+      <!--<ClaimsTransformation Id="CreateOtherMailsFromEmail" TransformationMethod="AddItemToStringCollection">
+        <InputClaims>
+          <InputClaim ClaimTypeReferenceId="email" TransformationClaimType="item" />
+          <InputClaim ClaimTypeReferenceId="otherMails" TransformationClaimType="collection" />
+        </InputClaims>
+        <OutputClaims>
+          <OutputClaim ClaimTypeReferenceId="otherMails" TransformationClaimType="collection" />
+        </OutputClaims>
+      </ClaimsTransformation>
+
+      <ClaimsTransformation Id="GetFirstOtherMail" TransformationMethod="GetSingleItemFromStringCollection">
+        <InputClaims>
+          <InputClaim ClaimTypeReferenceId="otherMails" TransformationClaimType="collection" />
+        </InputClaims>
+        <OutputClaims>
+          <OutputClaim ClaimTypeReferenceId="firstOtherMail" TransformationClaimType="extractedItem" />
+        </OutputClaims>
+      </ClaimsTransformation>
+
+      <ClaimsTransformation Id="CopyFirstOtherMailToEmail" TransformationMethod="AddItemToStringCollection">
+        <InputClaims>
+          <InputClaim ClaimTypeReferenceId="firstOtherMail" TransformationClaimType="item" />
+          <InputClaim ClaimTypeReferenceId="emails" TransformationClaimType="collection" />
+        </InputClaims>
+        <OutputClaims>
+          <OutputClaim ClaimTypeReferenceId="emails" TransformationClaimType="collection" />
+        </OutputClaims>
+      </ClaimsTransformation> -->
+
+      <ClaimsTransformation Id="CopySignInNamesEmailToOtherMails" TransformationMethod="AddItemToStringCollection">
+        <InputClaims>
+          <InputClaim ClaimTypeReferenceId="signInNames.emailAddress" TransformationClaimType="item" />
+          <InputClaim ClaimTypeReferenceId="otherMails" TransformationClaimType="collection" />
+        </InputClaims>
+        <OutputClaims>
+          <OutputClaim ClaimTypeReferenceId="otherMails" TransformationClaimType="collection" />
+        </OutputClaims>
+      </ClaimsTransformation>
+
+      <ClaimsTransformation Id="GetLocalizedStringsForMessage" TransformationMethod="GetLocalizedStringsTransformation">
+        <OutputClaims>
+          <OutputClaim ClaimTypeReferenceId="emailsent" TransformationClaimType="email_sent" />
+          <OutputClaim ClaimTypeReferenceId="pleaseclick" TransformationClaimType="please_click" />
+          <OutputClaim ClaimTypeReferenceId="introMessage" TransformationClaimType="intro_message" />
+          <OutputClaim ClaimTypeReferenceId="emailNotReceived" TransformationClaimType="email_not_received" />
+        </OutputClaims>
+      </ClaimsTransformation>
+
+      <ClaimsTransformation Id="CreateIntroMessage" TransformationMethod="FormatStringClaim">
+        <InputClaims>
+          <InputClaim ClaimTypeReferenceId="introMessage" TransformationClaimType="inputClaim" />
+        </InputClaims>
+        <InputParameters>
+          <InputParameter Id="stringFormat" DataType="string" Value="{0}"/>
+        </InputParameters>
+        <OutputClaims>
+          <OutputClaim ClaimTypeReferenceId="introMessage" TransformationClaimType="outputClaim" />
+        </OutputClaims>
+      </ClaimsTransformation>
+
+      <ClaimsTransformation Id="AppendEmailToUserMessage" TransformationMethod="FormatStringMultipleClaims">
+        <InputClaims>
+          <InputClaim ClaimTypeReferenceId="emailsent" TransformationClaimType="inputClaim1" />
+          <InputClaim ClaimTypeReferenceId="email" TransformationClaimType="inputClaim2" />
+        </InputClaims>
+        <InputParameters>
+          <InputParameter Id="stringFormat" DataType="string" Value="{0}{1}"/>
+        </InputParameters>
+        <OutputClaims>
+          <OutputClaim ClaimTypeReferenceId="userMessage" TransformationClaimType="outputClaim" />
+        </OutputClaims>
+      </ClaimsTransformation>
+
+      <ClaimsTransformation Id="CreateUserMessage" TransformationMethod="FormatStringMultipleClaims">
+        <InputClaims>
+          <InputClaim ClaimTypeReferenceId="userMessage" TransformationClaimType="inputClaim1" />
+          <InputClaim ClaimTypeReferenceId="pleaseclick" TransformationClaimType="inputClaim2" />
+        </InputClaims>
+        <InputParameters>
+          <InputParameter Id="stringFormat" DataType="string" Value="{0}{1}"/>
+        </InputParameters>
+        <OutputClaims>
+          <OutputClaim ClaimTypeReferenceId="userMessage" TransformationClaimType="outputClaim" />
+        </OutputClaims>
+      </ClaimsTransformation>
+
+      <ClaimsTransformation Id="AssertObjectIdObjectIdNotFoundAreEqual" TransformationMethod="AssertStringClaimsAreEqual">
+        <InputClaims>
+          <InputClaim ClaimTypeReferenceId="objectId" TransformationClaimType="inputClaim1" />
+          <InputClaim ClaimTypeReferenceId="objectIdNotFound" TransformationClaimType="inputClaim2" />
+        </InputClaims>
+        <InputParameters>
+          <InputParameter Id="stringComparison" DataType="string" Value="ordinalIgnoreCase" />
+        </InputParameters>
+      </ClaimsTransformation>
+
+    </ClaimsTransformations>
+
+    <ContentDefinitions>
+      <!-- This content definition is to render an error page that displays unhandled errors. -->
+      <ContentDefinition Id="api.signuporsignin">
+        <LoadUri>https://{Settings:BlobStorage}/sharedhtml/nex-signin.html</LoadUri>
+        <RecoveryUri>~/common/default_page_error.html</RecoveryUri>
+        <DataUri>urn:com:microsoft:aad:b2c:elements:contract:unifiedssp:1.2.0</DataUri>
+        <Metadata>
+          <Item Key="DisplayName">Signin and Signup</Item>
+        </Metadata>
+        <LocalizedResourcesReferences MergeBehavior="Prepend">
+          <LocalizedResourcesReference Language="en" LocalizedResourcesReferenceId="api.signuporsignin.en" />
+        </LocalizedResourcesReferences>
+      </ContentDefinition>
+      <ContentDefinition Id="api.localaccountsignup">
+        <LoadUri>https://{Settings:BlobStorage}/sharedhtml/nex-signup.html</LoadUri>
+        <RecoveryUri>~/common/default_page_error.html</RecoveryUri>
+        <DataUri>urn:com:microsoft:aad:b2c:elements:contract:selfasserted:1.2.0</DataUri>
+        <Metadata>
+          <Item Key="DisplayName">Local account sign up page</Item>
+        </Metadata>
+        <LocalizedResourcesReferences MergeBehavior="Prepend">
+          <LocalizedResourcesReference Language="en" LocalizedResourcesReferenceId="api.localaccountsignup.en" />
+        </LocalizedResourcesReferences>
+      </ContentDefinition>
+      <ContentDefinition Id="api.localaccountsignup.invite">
+        <LoadUri>https://{Settings:BlobStorage}/sharedhtml/nex-signup.html</LoadUri>
+        <RecoveryUri>~/common/default_page_error.html</RecoveryUri>
+        <DataUri>urn:com:microsoft:aad:b2c:elements:contract:selfasserted:1.2.0</DataUri>
+        <Metadata>
+          <Item Key="DisplayName">Local account sign up page</Item>
+        </Metadata>
+        <LocalizedResourcesReferences MergeBehavior="Prepend">
+          <LocalizedResourcesReference Language="en" LocalizedResourcesReferenceId="api.localaccountsignup.invite.en" />
+        </LocalizedResourcesReferences>
+      </ContentDefinition>
+      <ContentDefinition Id="api.localaccountsignup.invite_confirm">
+        <LoadUri>https://{Settings:BlobStorage}/sharedhtml/nex-signup.html</LoadUri>
+        <RecoveryUri>~/common/default_page_error.html</RecoveryUri>
+        <DataUri>urn:com:microsoft:aad:b2c:elements:contract:selfasserted:1.2.0</DataUri>
+        <Metadata>
+          <Item Key="DisplayName">Local account sign up page</Item>
+        </Metadata>
+        <LocalizedResourcesReferences MergeBehavior="Prepend">
+          <LocalizedResourcesReference Language="en" LocalizedResourcesReferenceId="api.localaccountsignup.invite_confirm.en" />
+        </LocalizedResourcesReferences>
+      </ContentDefinition>
+      <ContentDefinition Id="api.localaccountsignup.invite_confirm_end">
+        <LoadUri>https://{Settings:BlobStorage}/sharedhtml/nex-signup.html</LoadUri>
+        <RecoveryUri>~/common/default_page_error.html</RecoveryUri>
+        <DataUri>urn:com:microsoft:aad:b2c:elements:contract:selfasserted:1.2.0</DataUri>
+        <Metadata>
+          <Item Key="DisplayName">Local account sign up page</Item>
+        </Metadata>
+        <LocalizedResourcesReferences MergeBehavior="Prepend">
+          <LocalizedResourcesReference Language="en" LocalizedResourcesReferenceId="api.localaccountsignup.invite_confirm_end.en" />
+        </LocalizedResourcesReferences>
+      </ContentDefinition>
+      <ContentDefinition Id="api.localaccountpasswordreset">
+        <LoadUri>https://{Settings:BlobStorage}/sharedhtml/nex-signin.html</LoadUri>
+        <RecoveryUri>~/common/default_page_error.html</RecoveryUri>
+        <DataUri>urn:com:microsoft:aad:b2c:elements:contract:selfasserted:1.2.0</DataUri>
+        <Metadata>
+          <Item Key="DisplayName">Local account change password page</Item>
+        </Metadata>
+        <LocalizedResourcesReferences MergeBehavior="Prepend">
+          <LocalizedResourcesReference Language="en" LocalizedResourcesReferenceId="api.localaccountpasswordreset.en" />
+        </LocalizedResourcesReferences>
+      </ContentDefinition>
+      <ContentDefinition Id="api.localaccountpasswordreset.confirm">
+        <LoadUri>https://{Settings:BlobStorage}/sharedhtml/nex-signin.html</LoadUri>
+        <RecoveryUri>~/common/default_page_error.html</RecoveryUri>
+        <DataUri>urn:com:microsoft:aad:b2c:elements:contract:selfasserted:1.2.0</DataUri>
+        <Metadata>
+          <Item Key="DisplayName">Local account change password page</Item>
+        </Metadata>
+        <LocalizedResourcesReferences MergeBehavior="Prepend">
+          <LocalizedResourcesReference Language="en" LocalizedResourcesReferenceId="api.localaccountpasswordreset.confirm.en" />
+        </LocalizedResourcesReferences>
+      </ContentDefinition>
+      <ContentDefinition Id="api.localaccountpasswordreset.invite">
+        <LoadUri>https://{Settings:BlobStorage}/sharedhtml/nex-signin.html</LoadUri>
+        <RecoveryUri>~/common/default_page_error.html</RecoveryUri>
+        <DataUri>urn:com:microsoft:aad:b2c:elements:contract:selfasserted:1.2.0</DataUri>
+        <Metadata>
+          <Item Key="DisplayName">Local account change password invite page</Item>
+        </Metadata>
+        <LocalizedResourcesReferences MergeBehavior="Prepend">
+          <LocalizedResourcesReference Language="en" LocalizedResourcesReferenceId="api.localaccountpasswordreset.invite.en" />
+        </LocalizedResourcesReferences>
+      </ContentDefinition>
+      <ContentDefinition Id="api.localaccountpasswordreset.invite_confirm">
+        <LoadUri>https://{Settings:BlobStorage}/sharedhtml/nex-signin.html</LoadUri>
+        <RecoveryUri>~/common/default_page_error.html</RecoveryUri>
+        <DataUri>urn:com:microsoft:aad:b2c:elements:contract:selfasserted:1.2.0</DataUri>
+        <Metadata>
+          <Item Key="DisplayName">Local account change password invite page</Item>
+        </Metadata>
+        <LocalizedResourcesReferences MergeBehavior="Prepend">
+          <LocalizedResourcesReference Language="en" LocalizedResourcesReferenceId="api.localaccountpasswordreset.invite_confirm.en" />
+        </LocalizedResourcesReferences>
+      </ContentDefinition>
+      <ContentDefinition Id="api.localaccountpasswordreset.invite_confirm_end">
+        <LoadUri>https://{Settings:BlobStorage}/sharedhtml/nex-signin.html</LoadUri>
+        <RecoveryUri>~/common/default_page_error.html</RecoveryUri>
+        <DataUri>urn:com:microsoft:aad:b2c:elements:contract:selfasserted:1.2.0</DataUri>
+        <Metadata>
+          <Item Key="DisplayName">Local account change password invite page</Item>
+        </Metadata>
+        <LocalizedResourcesReferences MergeBehavior="Prepend">
+          <LocalizedResourcesReference Language="en" LocalizedResourcesReferenceId="api.localaccountpasswordreset.invite_confirm_end.en" />
+        </LocalizedResourcesReferences>
+      </ContentDefinition>
+      <ContentDefinition Id="api.selfasserted">
+        <LoadUri>https://{Settings:BlobStorage}/sharedhtml/nex-idp.html</LoadUri>
+        <RecoveryUri>~/common/default_page_error.html</RecoveryUri>
+        <DataUri>urn:com:microsoft:aad:b2c:elements:contract:selfasserted:1.2.0</DataUri>
+        <Metadata>
+          <Item Key="DisplayName">Collect information from user page</Item>
+        </Metadata>
+        <LocalizedResourcesReferences MergeBehavior="Prepend">
+          <LocalizedResourcesReference Language="en" LocalizedResourcesReferenceId="api.selfasserted.en" />
+        </LocalizedResourcesReferences>
+      </ContentDefinition>
+      <ContentDefinition Id="api.error">
+        <LoadUri>https://{Settings:BlobStorage}/sharedhtml/nex-signin.html</LoadUri>
+        <RecoveryUri>~/common/default_page_error.html</RecoveryUri>
+        <DataUri>urn:com:microsoft:aad:b2c:elements:contract:globalexception:1.2.0</DataUri>
+        <Metadata>
+          <Item Key="DisplayName">Error page</Item>
+        </Metadata>
+      </ContentDefinition>
+      <ContentDefinition Id="api.idpselections">
+        <LoadUri>https://{Settings:BlobStorage}/sharedhtml/nex-signin.html</LoadUri>
+        <RecoveryUri>~/common/default_page_error.html</RecoveryUri>
+        <DataUri>urn:com:microsoft:aad:b2c:elements:contract:providerselection:1.2.0</DataUri>
+        <Metadata>
+          <Item Key="DisplayName">Idp selection page</Item>
+          <Item Key="language.intro">Sign in</Item>
+        </Metadata>
+      </ContentDefinition>
+      <ContentDefinition Id="api.idpselections.signup">
+        <LoadUri>https://{Settings:BlobStorage}/sharedhtml/nex-signup.html</LoadUri>
+        <RecoveryUri>~/common/default_page_error.html</RecoveryUri>
+        <DataUri>urn:com:microsoft:aad:b2c:elements:contract:providerselection:1.2.0</DataUri>
+        <Metadata>
+          <Item Key="DisplayName">Idp selection page</Item>
+          <Item Key="language.intro">Sign up</Item>
+        </Metadata>
+      </ContentDefinition>
+      <ContentDefinition Id="api.selfasserted.profileupdate">
+        <LoadUri>https://{Settings:BlobStorage}/sharedhtml/nex-signin.html</LoadUri>
+        <RecoveryUri>~/common/default_page_error.html</RecoveryUri>
+        <DataUri>urn:com:microsoft:aad:b2c:elements:contract:selfasserted:1.2.0</DataUri>
+        <Metadata>
+          <Item Key="DisplayName">Collect information from user page</Item>
+        </Metadata>
+      </ContentDefinition>
+    </ContentDefinitions>
+    <Localization Enabled="true">
+      <SupportedLanguages DefaultLanguage="en" MergeBehavior="ReplaceAll">
+        <SupportedLanguage>en</SupportedLanguage>
+      </SupportedLanguages>
+      <LocalizedResources Id="api.signuporsignin.en">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="local_intro_email">Sign into your existing account</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="remember_me">Stay signed in</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_signin">Log In</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="createaccount_intro"></LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="createaccount_link">New User</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account SignUp -->
+      <!-- Used for Local Account SignUp, Send invite -->
+      <LocalizedResources Id="api.localaccountsignup.invite.en">
+        <LocalizedStrings>
+          <!-- <LocalizedString ElementType="UxElement" StringId="initial_intro">Please enter your email address so that we may send a confirmation link to your inbox.</LocalizedString> -->
+          <LocalizedString ElementType="UxElement" StringId="initial_intro"></LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="error_fieldIncorrect">Oops. The following needs to be fixed.</LocalizedString>
+          <LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfClaimsTransformationStringsAreNotEqual">This email is already registered. Sign in as a returning user.</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">Next</LocalizedString>
+          <!-- <LocalizedString ElementType="UxElement" StringId="verifying_blurb"></LocalizedString> -->
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="email_sent">An email has been sent to </LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="please_click">! Please click on the link to verify your email address and continue!</LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="intro_message">Please enter your email address so that we may send a confirmation link to your inbox.</LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="email_not_received">If you have still not received the link in your inbox, please click below to re-enter your email address.</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account SignUp, Show invite confirmation -->
+      <LocalizedResources Id="api.localaccountsignup.invite_confirm.en">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">Identity Verification</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">Resend Email</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account SignUp, Show invite confirmation end screen -->
+      <LocalizedResources Id="api.localaccountsignup.invite_confirm_end.en">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">Identity Verification</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">Continue</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account SignUp, Invite accepted -->
+      <LocalizedResources Id="api.localaccountsignup.en">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">Set up your new account</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">Next</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+
+      <!-- Used for Local Account Password Reset -->
+      <!-- Used for Local Account Password Reset, Send invite -->
+      <LocalizedResources Id="api.localaccountpasswordreset.invite.en">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">Password Reset</LocalizedString>
+          <LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfClaimsPrincipalDoesNotExist">User account could not be found for the provided email address.</LocalizedString>
+          <!-- <LocalizedString ElementType="UxElement" StringId="verifying_blurb"></LocalizedString> -->
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="email_sent">A password reset link has been sent to </LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="please_click">! Please click on the link in the email to set a new password!</LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="intro_message">Enter the email address you used to register.</LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="email_not_received">If you have still not received the link in your inbox, please click below to re-enter your email address.</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">Next</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account Password Reset, Show invite confirmation -->
+      <LocalizedResources Id="api.localaccountpasswordreset.invite_confirm.en">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">Password Reset</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">Resend Email</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account Password Reset, Show invite confirmation end screen -->
+      <LocalizedResources Id="api.localaccountpasswordreset.invite_confirm_end.en">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">Password Reset</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">Continue</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account Password Reset, Invite accepted -->
+      <LocalizedResources Id="api.localaccountpasswordreset.en">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">Password Reset</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">Done</LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="password_Change_Complete">Password successfully changed!</LocalizedString>
+          <!-- <LocalizedString ElementType="UxElement" StringId="verifying_blurb"></LocalizedString> -->
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account Password Reset, Password change confirmation -->
+      <LocalizedResources Id="api.localaccountpasswordreset.confirm.en">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">Password Reset</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">Proceed to Log in</LocalizedString>
+          <!-- <LocalizedString ElementType="UxElement" StringId="verifying_blurb"></LocalizedString> -->
+        </LocalizedStrings>
+      </LocalizedResources>
+
+      <!-- Used for Social IDP -->
+      <LocalizedResources Id="api.selfasserted.en">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">Please provide details below.</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">Next</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+
+    </Localization>
+  </BuildingBlocks>
+  <ClaimsProviders>
+
+
+    <!--Sample: This technical profile sends a magic link to the provided email address-->
+    <ClaimsProvider>
+      <DisplayName>REST API Provider</DisplayName>
+      <TechnicalProfiles>
+        <TechnicalProfile Id="REST-SendMagicLink">
+          <DisplayName>Send a magic link</DisplayName>
+          <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.RestfulProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+          <Metadata>
+            <Item Key="ServiceUrl">https://{Settings:RESTApiServer}/api/identity</Item>
+            <Item Key="SendClaimsIn">Body</Item>
+            <Item Key="AuthenticationType">ClientCertificate</Item>
+            <Item Key="AllowInsecureAuthInProduction">false</Item>
+          </Metadata>
+          <CryptographicKeys>
+            <Key Id="ClientCertificate" StorageReferenceId="{Settings:RESTClientCertKey}" />
+          </CryptographicKeys>
+          <InputClaims>
+            <InputClaim ClaimTypeReferenceId="email" />
+            <InputClaim ClaimTypeReferenceId="signupOrpwdreset"/>
+            <InputClaim ClaimTypeReferenceId="givenName"/>
+            <InputClaim ClaimTypeReferenceId="displayName"/>
+          </InputClaims>
+          <OutputClaims>
+            <OutputClaim ClaimTypeReferenceId="magicLinkSent" DefaultValue="true" AlwaysUseDefaultValue="true"/>
+          </OutputClaims>
+          <UseTechnicalProfileForSessionManagement ReferenceId="SM-Noop" />
+        </TechnicalProfile>
+        <TechnicalProfile Id="REST-ValidateGreenRoomKey">
+          <DisplayName>Validate Green Room Key</DisplayName>
+          <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.RestfulProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+          <Metadata>
+            <Item Key="ServiceUrl">https://{Settings:RESTApiServer}/api/validation/greenroomkey</Item>
+            <Item Key="SendClaimsIn">Body</Item>
+            <Item Key="AuthenticationType">ClientCertificate</Item>
+            <Item Key="AllowInsecureAuthInProduction">false</Item>
+          </Metadata>
+          <CryptographicKeys>
+            <Key Id="ClientCertificate" StorageReferenceId="{Settings:RESTClientCertKey}" />
+          </CryptographicKeys>
+          <InputClaims>
+            <InputClaim ClaimTypeReferenceId="greenRoomKey" PartnerClaimType="extension_GreenRoomKey" />
+            <InputClaim ClaimTypeReferenceId="userLanguage" PartnerClaimType="lang" DefaultValue="{Culture:LCID}" AlwaysUseDefaultValue="true"/>
+          </InputClaims>
+          <!-- <OutputClaims>
+            <OutputClaim ClaimTypeReferenceId="greenRoomKeyIsValid" PartnerClaimType="isValid"/>
+          </OutputClaims> -->
+          <UseTechnicalProfileForSessionManagement ReferenceId="SM-Noop" />
+        </TechnicalProfile>
+
+      </TechnicalProfiles>
+    </ClaimsProvider>
+
+    <ClaimsProvider>
+      <DisplayName>Self Asserted</DisplayName>
+      <TechnicalProfiles>
+        <!-- This technical profile collect the email address, and call a validation technical profile
+          to send the magic link to the provided email address-->
+        <TechnicalProfile Id="SelfAsserted-LocalAccountSignup-MagicLink">
+          <DisplayName>Magic link</DisplayName>
+          <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.SelfAssertedAttributeProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"/>
+          <Metadata>
+            <Item Key="ContentDefinitionReferenceId">api.localaccountsignup.invite</Item>
+            <Item Key="setting.showContinueButton">True</Item>
+            <Item Key="setting.showCancelButton">True</Item>
+          </Metadata>
+          <InputClaimsTransformations>
+            <InputClaimsTransformation ReferenceId="GetLocalizedStringsForMessage" />
+            <InputClaimsTransformation ReferenceId="CreateIntroMessage" />
+          </InputClaimsTransformations>
+          <InputClaims>
+            <InputClaim ClaimTypeReferenceId="introMessage"/>
+            <InputClaim ClaimTypeReferenceId="email" />
+            <InputClaim ClaimTypeReferenceId="signupOrpwdreset" DefaultValue="signup"/>
+          </InputClaims>
+          <OutputClaims>
+            <OutputClaim ClaimTypeReferenceId="introMessage"/>
+            <OutputClaim ClaimTypeReferenceId="email" Required="true"/>
+            <OutputClaim ClaimTypeReferenceId="objectId" />
+          </OutputClaims>
+          <OutputClaimsTransformations>
+            <OutputClaimsTransformation ReferenceId="AppendEmailToUserMessage" />
+            <OutputClaimsTransformation ReferenceId="CreateUserMessage" />
+            <!-- <OutputClaimsTransformation ReferenceId="UserExistsMessage" /> -->
+          </OutputClaimsTransformations>
+          <ValidationTechnicalProfiles>
+            <ValidationTechnicalProfile ReferenceId="AAD-UserExistsUsingEmailAddress"/>
+          </ValidationTechnicalProfiles>
+          <!-- <UseTechnicalProfileForSessionManagement ReferenceId="SM-AAD"/> -->
+        </TechnicalProfile>
+
+        <!-- Show error message-->
+        <TechnicalProfile Id="SelfAsserted-Unsolicited">
+          <DisplayName>Unsolicited error message</DisplayName>
+          <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.SelfAssertedAttributeProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"/>
+          <Metadata>
+            <Item Key="ContentDefinitionReferenceId">api.selfasserted</Item>
+            <!--Remove the continue button-->
+            <Item Key="setting.showContinueButton">false</Item>
+          </Metadata>
+          <InputClaimsTransformations>
+            <InputClaimsTransformation ReferenceId="CreateUnsolicitedErrorMessage" />
+          </InputClaimsTransformations>
+          <InputClaims>
+            <InputClaim ClaimTypeReferenceId="errorMessage"/>
+          </InputClaims>
+          <OutputClaims>
+            <OutputClaim ClaimTypeReferenceId="errorMessage"/>
+          </OutputClaims>
+        </TechnicalProfile>
+
+        <!-- Show email sent message-->
+        <TechnicalProfile Id="SelfAsserted-EmailSent">
+          <DisplayName>Sign-up with local account</DisplayName>
+          <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.SelfAssertedAttributeProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"/>
+          <Metadata>
+            <!-- Remove the cancel button-->
+            <Item Key="setting.showContinueButton">true</Item>
+            <Item Key="setting.showCancelButton">false</Item>
+          </Metadata>
+          <InputClaims>
+            <InputClaim ClaimTypeReferenceId="userMessage"/>
+          </InputClaims>
+          <OutputClaims>
+            <OutputClaim ClaimTypeReferenceId="userMessage"/>
+            <OutputClaim ClaimTypeReferenceId="magicLinkSent" DefaultValue="false"/>
+          </OutputClaims>
+        </TechnicalProfile>
+
+        <TechnicalProfile Id="SelfAsserted-Email-Re-Sent">
+          <DisplayName>Sign-up with local account</DisplayName>
+          <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.SelfAssertedAttributeProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"/>
+          <Metadata>
+            <Item Key="ContentDefinitionReferenceId">api.localaccountsignup.invite_confirm_end</Item>
+            <!-- Remove the continue and cancel button-->
+            <Item Key="setting.showContinueButton">true</Item>
+            <Item Key="setting.showCancelButton">false</Item>
+          </Metadata>
+          <InputClaims>
+            <InputClaim ClaimTypeReferenceId="userMessage"/>
+            <InputClaim ClaimTypeReferenceId="emailNotReceived"/>
+          </InputClaims>
+          <OutputClaims>
+            <OutputClaim ClaimTypeReferenceId="userMessage"/>
+            <OutputClaim ClaimTypeReferenceId="emailNotReceived"/>
+          </OutputClaims>
+        </TechnicalProfile>
+
+        <TechnicalProfile Id="AAD-UserExistsUsingEmailAddress">
+          <Metadata>
+            <Item Key="Operation">Read</Item>
+            <Item Key="RaiseErrorIfClaimsPrincipalDoesNotExist">False</Item>
+            <!-- <Item Key="UserMessageIfClaimsPrincipalDoesNotExist">An account could not be found for the provided user ID.</Item> -->
+          </Metadata>
+          <IncludeInSso>false</IncludeInSso>
+          <InputClaims>
+            <InputClaim ClaimTypeReferenceId="email" PartnerClaimType="signInNames.emailAddress" Required="true" />
+          </InputClaims>
+          <OutputClaims>
+            <OutputClaim ClaimTypeReferenceId="objectId" DefaultValue="NOTFOUND" />
+            <OutputClaim ClaimTypeReferenceId="objectIdNotFound" DefaultValue="NOTFOUND" AlwaysUseDefaultValue="true" />
+          </OutputClaims>
+          <!-- <OutputClaimsTransformations>
+            <OutputClaimsTransformation ReferenceId="AssertAccountEnabledIsTrue" />
+          </OutputClaimsTransformations> -->
+          <OutputClaimsTransformations>
+            <OutputClaimsTransformation ReferenceId="AssertObjectIdObjectIdNotFoundAreEqual" />
+          </OutputClaimsTransformations>
+          <IncludeTechnicalProfile ReferenceId="AAD-Common" />
+        </TechnicalProfile>
+
+      </TechnicalProfiles>
+    </ClaimsProvider>
+
+    <!--Sample: This technical profile specifies how B2C should validate your token, and what claims you want B2C to extract from the token. 
+      The METADATA value in the TechnicalProfile meta-data is required. 
+      The “IdTokenAudience” and “issuer” arguments are optional (see later section)-->
+    <ClaimsProvider>
+      <DisplayName>My ID Token Hint ClaimsProvider</DisplayName>
+      <TechnicalProfiles>
+        <TechnicalProfile Id="IdTokenHint_ExtractClaims">
+          <DisplayName> My ID Token Hint TechnicalProfile</DisplayName>
+          <Protocol Name="None" />
+          <Metadata>
+            <Item Key="METADATA">https://{Settings:RESTApiServer}/.well-known/openid-configuration</Item>
+            <!-- <Item Key="IdTokenAudience">your_optional_audience_override</Item> -->
+            <!-- <Item Key="issuer">your_optional_token_issuer_override</Item> -->
+          </Metadata>
+          <OutputClaims>
+            <!--Read the email cliam from the id_token_hint-->
+            <OutputClaim ClaimTypeReferenceId="email" />
+          </OutputClaims>
+        </TechnicalProfile>
+      </TechnicalProfiles>
+    </ClaimsProvider>
+
+    <ClaimsProvider>
+      <DisplayName>Facebook</DisplayName>
+      <TechnicalProfiles>
+        <TechnicalProfile Id="Facebook-OAUTH">
+          <OutputClaims>
+            <OutputClaim ClaimTypeReferenceId="identityProviderAccessToken" PartnerClaimType="{oauth2:access_token}" />
+          </OutputClaims>
+        </TechnicalProfile>
+      </TechnicalProfiles>
+    </ClaimsProvider>
+
+    <ClaimsProvider>
+      <DisplayName>CBRE</DisplayName>
+      <TechnicalProfiles>
+        <TechnicalProfile Id="O365-AAD">
+          <DisplayName>CBRE SSO</DisplayName>
+          <OutputClaims>
+            <OutputClaim ClaimTypeReferenceId="identityProviderAccessToken" PartnerClaimType="{oauth2:access_token}" />
+            <OutputClaim ClaimTypeReferenceId="authenticationSource" DefaultValue="socialIdpFederated" AlwaysUseDefaultValue="true" />
+          </OutputClaims>
+        </TechnicalProfile>
+      </TechnicalProfiles>
+    </ClaimsProvider>
+
+    <ClaimsProvider>
+      <DisplayName>Google</DisplayName>
+      <TechnicalProfiles>
+        <TechnicalProfile Id="Google-OAUTH">
+          <OutputClaims>
+            <OutputClaim ClaimTypeReferenceId="identityProviderAccessToken" PartnerClaimType="{oauth2:access_token}" />
+          </OutputClaims>
+        </TechnicalProfile>
+
+      </TechnicalProfiles>
+    </ClaimsProvider>
+
+    <ClaimsProvider>
+      <DisplayName>Microsoft</DisplayName>
+      <TechnicalProfiles>
+        <TechnicalProfile Id="MSA-OIDC">
+          <OutputClaims>
+            <OutputClaim ClaimTypeReferenceId="identityProviderAccessToken" PartnerClaimType="{oauth2:access_token}" />
+          </OutputClaims>
+        </TechnicalProfile>
+      </TechnicalProfiles>
+    </ClaimsProvider>
+
+    <ClaimsProvider>
+      <DisplayName>Local Account SignIn</DisplayName>
+      <TechnicalProfiles>
+        <TechnicalProfile Id="SelfAsserted-LocalAccountSignin-Email">
+          <DisplayName>Local Account Signin</DisplayName>
+          <InputClaims>
+            <InputClaim ClaimTypeReferenceId="otherMails" />
+          </InputClaims>
+
+          <OutputClaims>
+            <OutputClaim ClaimTypeReferenceId="otherMails" />
+          </OutputClaims>
+
+        </TechnicalProfile>
+
+        <TechnicalProfile Id="login-NonInteractive">
+          <OutputClaims>
+            <OutputClaim ClaimTypeReferenceId="identityProviderAccessToken" PartnerClaimType="{oauth2:access_token}" />
+            <OutputClaim ClaimTypeReferenceId="otherMails" />
+          </OutputClaims>
+        </TechnicalProfile>
+
+        <!-- The following technical profile is used to create the emails collection after user authenticates. -->
+        <!-- <TechnicalProfile Id="AAD-UserCreateEmailsClaim">
+          <Metadata>
+            <Item Key="Operation">Read</Item>
+            <Item Key="RaiseErrorIfClaimsPrincipalDoesNotExist">true</Item>
+          </Metadata>
+          <IncludeInSso>false</IncludeInSso>
+          <InputClaims>
+            <InputClaim ClaimTypeReferenceId="objectId" Required="true" />
+          </InputClaims>
+          <OutputClaims>
+            <OutputClaim ClaimTypeReferenceId="emails" AlwaysUseDefaultValue="true" DefaultValue="emailaddress"/>           
+          </OutputClaims>
+          <OutputClaimsTransformations>
+            <OutputClaimsTransformation ReferenceId="GetFirstOtherMail"/>
+            <OutputClaimsTransformation ReferenceId="CopySignInNamesEmailToEmails"/>
+            <OutputClaimsTransformation ReferenceId="CopyFirstOtherMailToEmail"/>
+          </OutputClaimsTransformations>
+          <IncludeTechnicalProfile ReferenceId="AAD-Common" />
+        </TechnicalProfile> -->
+
+        <TechnicalProfile Id="AAD-UserWriteUsingLogonEmail">
+          <IncludeInSso>false</IncludeInSso>
+          <InputClaimsTransformations>
+            <InputClaimsTransformation ReferenceId="CreateOtherMailsFromEmail" />
+          </InputClaimsTransformations>
+          <PersistedClaims>
+            <PersistedClaim ClaimTypeReferenceId="otherMails" />
+          </PersistedClaims>
+          <OutputClaims>
+            <OutputClaim ClaimTypeReferenceId="otherMails" />
+          </OutputClaims>
+        </TechnicalProfile>
+
+        <TechnicalProfile Id="LocalAccountSignUpWithLogonEmail">
+          <OutputClaims>
+            <OutputClaim ClaimTypeReferenceId="otherMails" />
+          </OutputClaims>
+        </TechnicalProfile>
+
+        <TechnicalProfile Id="SelfAsserted-Social-IDP">
+          <Metadata>
+            <Item Key="setting.showCancelButton">false</Item>
+          </Metadata>
+          <OutputClaims>
+            <OutputClaim ClaimTypeReferenceId="displayName" Required="true" />
+            <OutputClaim ClaimTypeReferenceId="givenName" Required="true" />
+            <OutputClaim ClaimTypeReferenceId="surName" Required="true" />
+            <OutputClaim ClaimTypeReferenceId="greenroomkey" Required="true" />
+            <OutputClaim ClaimTypeReferenceId="otherMails" />
+          </OutputClaims>
+          <ValidationTechnicalProfiles>
+            <ValidationTechnicalProfile ReferenceId="REST-ValidateGreenRoomKey" ContinueOnError="false"/>
+          </ValidationTechnicalProfiles>
+          <IncludeTechnicalProfile ReferenceId="SelfAsserted-Social" />
+        </TechnicalProfile>
+
+        <TechnicalProfile Id="SelfAsserted-Social-Federated">
+          <Metadata>
+            <Item Key="setting.showCancelButton">false</Item>
+          </Metadata>
+          <OutputClaims>
+            <OutputClaim ClaimTypeReferenceId="displayName" Required="true" />
+            <OutputClaim ClaimTypeReferenceId="givenName" Required="true" />
+            <OutputClaim ClaimTypeReferenceId="surName" Required="true" />
+            <OutputClaim ClaimTypeReferenceId="greenroomkey" Required="true" />
+            <OutputClaim ClaimTypeReferenceId="otherMails" />
+          </OutputClaims>
+          <ValidationTechnicalProfiles>
+            <ValidationTechnicalProfile ReferenceId="REST-ValidateGreenRoomKey" ContinueOnError="false"/>
+          </ValidationTechnicalProfiles>
+          <IncludeTechnicalProfile ReferenceId="SelfAsserted-Social" />
+        </TechnicalProfile>
+
+        <TechnicalProfile Id="LocalAccountDiscoveryUsingEmailAddress">
+          <OutputClaims>
+            <OutputClaim ClaimTypeReferenceId="otherMails" />
+          </OutputClaims>
+        </TechnicalProfile>
+
+        <TechnicalProfile Id="AddSignInNamesEmailAddresstoOtherMails">
+          <DisplayName>Add signinNames.emailAddress to otherMails</DisplayName>
+          <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.ClaimsTransformationProtocolProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+          <OutputClaims>
+            <OutputClaim ClaimTypeReferenceId="otherMails" />
+          </OutputClaims>
+          <OutputClaimsTransformations>
+            <OutputClaimsTransformation ReferenceId="CopySignInNamesEmailToOtherMails" />
+          </OutputClaimsTransformations>
+        </TechnicalProfile>
+
+        <TechnicalProfile Id="AddEmailAddresstoOtherMails">
+          <DisplayName>Add signinNames.emailAddress to otherMails</DisplayName>
+          <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.ClaimsTransformationProtocolProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+          <OutputClaims>
+            <OutputClaim ClaimTypeReferenceId="otherMails" />
+          </OutputClaims>
+          <OutputClaimsTransformations>
+            <OutputClaimsTransformation ReferenceId="CreateOtherMailsFromEmail" />
+          </OutputClaimsTransformations>
+        </TechnicalProfile>
+
+        <TechnicalProfile Id="AAD-UserReadUsingEmailAddress-NoError">
+          <Metadata>
+            <Item Key="RaiseErrorIfClaimsPrincipalDoesNotExist">false</Item>
+          </Metadata>
+          <IncludeTechnicalProfile ReferenceId="AAD-UserReadUsingEmailAddress" />
+        </TechnicalProfile>
+
+      </TechnicalProfiles>
+    </ClaimsProvider>
+
+  </ClaimsProviders>
+
+
+</TrustFrameworkPolicy>
