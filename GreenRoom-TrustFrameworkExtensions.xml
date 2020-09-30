@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿﻿<?xml version="1.0" encoding="utf-8" ?>
 <TrustFrameworkPolicy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
   xmlns="http://schemas.microsoft.com/online/cpim/schemas/2013/06" PolicySchemaVersion="0.3.0.0" TenantId="{Settings:Tenant}" PolicyId="{Settings:PolicyPrefix}GreenRoom_TrustFrameworkExtensions" PublicPolicyUri="http://{Settings:Tenant}/{Settings:PolicyPrefix}GreenRoom_TrustFrameworkExtensions">
@@ -242,6 +242,8 @@
 
     </ClaimsTransformations>
 
+        <!--___________________________________________________________________   DEFINITIONS  ________________________________________________________________________________________________________________________  -->
+
     <ContentDefinitions>
       <!-- This content definition is to render an error page that displays unhandled errors. -->
       <ContentDefinition Id="api.signuporsignin">
@@ -253,6 +255,13 @@
         </Metadata>
         <LocalizedResourcesReferences MergeBehavior="Prepend">
           <LocalizedResourcesReference Language="en" LocalizedResourcesReferenceId="api.signuporsignin.en" />
+          <LocalizedResourcesReference Language="ja" LocalizedResourcesReferenceId="api.signuporsignin.ja" />
+          <LocalizedResourcesReference Language="ko" LocalizedResourcesReferenceId="api.signuporsignin.ko" />
+          <LocalizedResourcesReference Language="ms" LocalizedResourcesReferenceId="api.signuporsignin.ms" />
+          <LocalizedResourcesReference Language="th" LocalizedResourcesReferenceId="api.signuporsignin.th" />
+          <LocalizedResourcesReference Language="vi" LocalizedResourcesReferenceId="api.signuporsignin.vi" />
+          <LocalizedResourcesReference Language="zh-CN" LocalizedResourcesReferenceId="api.signuporsignin.zh-CN" />
+          <LocalizedResourcesReference Language="zh-TW" LocalizedResourcesReferenceId="api.signuporsignin.zh-TW" />
         </LocalizedResourcesReferences>
       </ContentDefinition>
       <ContentDefinition Id="api.localaccountsignup">
@@ -264,6 +273,13 @@
         </Metadata>
         <LocalizedResourcesReferences MergeBehavior="Prepend">
           <LocalizedResourcesReference Language="en" LocalizedResourcesReferenceId="api.localaccountsignup.en" />
+          <LocalizedResourcesReference Language="ja" LocalizedResourcesReferenceId="api.localaccountsignup.ja" />
+          <LocalizedResourcesReference Language="ko" LocalizedResourcesReferenceId="api.localaccountsignup.ko" />
+          <LocalizedResourcesReference Language="ms" LocalizedResourcesReferenceId="api.localaccountsignup.ms" />
+          <LocalizedResourcesReference Language="th" LocalizedResourcesReferenceId="api.localaccountsignup.th" />
+          <LocalizedResourcesReference Language="vi" LocalizedResourcesReferenceId="api.localaccountsignup.vi" />
+          <LocalizedResourcesReference Language="zh-CN" LocalizedResourcesReferenceId="api.localaccountsignup.zh-CN" />
+          <LocalizedResourcesReference Language="zh-TW" LocalizedResourcesReferenceId="api.localaccountsignup.zh-TW" />
         </LocalizedResourcesReferences>
       </ContentDefinition>
       <ContentDefinition Id="api.localaccountsignup.invite">
@@ -275,6 +291,13 @@
         </Metadata>
         <LocalizedResourcesReferences MergeBehavior="Prepend">
           <LocalizedResourcesReference Language="en" LocalizedResourcesReferenceId="api.localaccountsignup.invite.en" />
+          <LocalizedResourcesReference Language="ja" LocalizedResourcesReferenceId="api.localaccountsignup.invite.ja" />
+          <LocalizedResourcesReference Language="ko" LocalizedResourcesReferenceId="api.localaccountsignup.invite.ko" />
+          <LocalizedResourcesReference Language="ms" LocalizedResourcesReferenceId="api.localaccountsignup.invite.ms" />
+          <LocalizedResourcesReference Language="th" LocalizedResourcesReferenceId="api.localaccountsignup.invite.th" />
+          <LocalizedResourcesReference Language="vi" LocalizedResourcesReferenceId="api.localaccountsignup.invite.vi" />
+          <LocalizedResourcesReference Language="zh-CN" LocalizedResourcesReferenceId="api.localaccountsignup.invite.zh-CN" />
+          <LocalizedResourcesReference Language="zh-TW" LocalizedResourcesReferenceId="api.localaccountsignup.invite.zh-TW" />
         </LocalizedResourcesReferences>
       </ContentDefinition>
       <ContentDefinition Id="api.localaccountsignup.invite_confirm">
@@ -286,6 +309,13 @@
         </Metadata>
         <LocalizedResourcesReferences MergeBehavior="Prepend">
           <LocalizedResourcesReference Language="en" LocalizedResourcesReferenceId="api.localaccountsignup.invite_confirm.en" />
+          <LocalizedResourcesReference Language="ja" LocalizedResourcesReferenceId="api.localaccountsignup.invite_confirm.ja" />
+          <LocalizedResourcesReference Language="ko" LocalizedResourcesReferenceId="api.localaccountsignup.invite_confirm.ko" />
+          <LocalizedResourcesReference Language="ms" LocalizedResourcesReferenceId="api.localaccountsignup.invite_confirm.ms" />
+          <LocalizedResourcesReference Language="th" LocalizedResourcesReferenceId="api.localaccountsignup.invite_confirm.th" />
+          <LocalizedResourcesReference Language="vi" LocalizedResourcesReferenceId="api.localaccountsignup.invite_confirm.vi" />
+          <LocalizedResourcesReference Language="zh-CN" LocalizedResourcesReferenceId="api.localaccountsignup.invite_confirm.zh-CN" />
+          <LocalizedResourcesReference Language="zh-TW" LocalizedResourcesReferenceId="api.localaccountsignup.invite_confirm.zh-TW" />
         </LocalizedResourcesReferences>
       </ContentDefinition>
       <ContentDefinition Id="api.localaccountsignup.invite_confirm_end">
@@ -297,6 +327,13 @@
         </Metadata>
         <LocalizedResourcesReferences MergeBehavior="Prepend">
           <LocalizedResourcesReference Language="en" LocalizedResourcesReferenceId="api.localaccountsignup.invite_confirm_end.en" />
+          <LocalizedResourcesReference Language="ja" LocalizedResourcesReferenceId="api.localaccountsignup.invite_confirm_end.ja" />
+          <LocalizedResourcesReference Language="ko" LocalizedResourcesReferenceId="api.localaccountsignup.invite_confirm_end.ko" />
+          <LocalizedResourcesReference Language="ms" LocalizedResourcesReferenceId="api.localaccountsignup.invite_confirm_end.ms" />
+          <LocalizedResourcesReference Language="th" LocalizedResourcesReferenceId="api.localaccountsignup.invite_confirm_end.th" />
+          <LocalizedResourcesReference Language="vi" LocalizedResourcesReferenceId="api.localaccountsignup.invite_confirm_end.vi" />
+          <LocalizedResourcesReference Language="zh-CN" LocalizedResourcesReferenceId="api.localaccountsignup.invite_confirm_end.zh-CN" />
+          <LocalizedResourcesReference Language="zh-TW" LocalizedResourcesReferenceId="api.localaccountsignup.invite_confirm_end.zh-TW" />
         </LocalizedResourcesReferences>
       </ContentDefinition>
       <ContentDefinition Id="api.localaccountpasswordreset">
@@ -308,6 +345,13 @@
         </Metadata>
         <LocalizedResourcesReferences MergeBehavior="Prepend">
           <LocalizedResourcesReference Language="en" LocalizedResourcesReferenceId="api.localaccountpasswordreset.en" />
+          <LocalizedResourcesReference Language="ja" LocalizedResourcesReferenceId="api.localaccountpasswordreset.ja" />
+          <LocalizedResourcesReference Language="ko" LocalizedResourcesReferenceId="api.localaccountpasswordreset.ko" />
+          <LocalizedResourcesReference Language="ms" LocalizedResourcesReferenceId="api.localaccountpasswordreset.ms" />
+          <LocalizedResourcesReference Language="th" LocalizedResourcesReferenceId="api.localaccountpasswordreset.th" />
+          <LocalizedResourcesReference Language="vi" LocalizedResourcesReferenceId="api.localaccountpasswordreset.vi" />
+          <LocalizedResourcesReference Language="zh-CN" LocalizedResourcesReferenceId="api.localaccountpasswordreset.zh-CN" />
+          <LocalizedResourcesReference Language="zh-TW" LocalizedResourcesReferenceId="api.localaccountpasswordreset.zh-TW" />
         </LocalizedResourcesReferences>
       </ContentDefinition>
       <ContentDefinition Id="api.localaccountpasswordreset.confirm">
@@ -319,6 +363,13 @@
         </Metadata>
         <LocalizedResourcesReferences MergeBehavior="Prepend">
           <LocalizedResourcesReference Language="en" LocalizedResourcesReferenceId="api.localaccountpasswordreset.confirm.en" />
+          <LocalizedResourcesReference Language="ja" LocalizedResourcesReferenceId="api.localaccountpasswordreset.confirm.ja" />
+          <LocalizedResourcesReference Language="ko" LocalizedResourcesReferenceId="api.localaccountpasswordreset.confirm.ko" />
+          <LocalizedResourcesReference Language="ms" LocalizedResourcesReferenceId="api.localaccountpasswordreset.confirm.ms" />
+          <LocalizedResourcesReference Language="th" LocalizedResourcesReferenceId="api.localaccountpasswordreset.confirm.th" />
+          <LocalizedResourcesReference Language="vi" LocalizedResourcesReferenceId="api.localaccountpasswordreset.confirm.vi" />
+          <LocalizedResourcesReference Language="zh-CN" LocalizedResourcesReferenceId="api.localaccountpasswordreset.confirm.zh-CN" />
+          <LocalizedResourcesReference Language="zh-TW" LocalizedResourcesReferenceId="api.localaccountpasswordreset.confirm.zh-TW" />
         </LocalizedResourcesReferences>
       </ContentDefinition>
       <ContentDefinition Id="api.localaccountpasswordreset.invite">
@@ -330,6 +381,13 @@
         </Metadata>
         <LocalizedResourcesReferences MergeBehavior="Prepend">
           <LocalizedResourcesReference Language="en" LocalizedResourcesReferenceId="api.localaccountpasswordreset.invite.en" />
+          <LocalizedResourcesReference Language="ja" LocalizedResourcesReferenceId="api.localaccountpasswordreset.invite.ja" />
+          <LocalizedResourcesReference Language="ko" LocalizedResourcesReferenceId="api.localaccountpasswordreset.invite.ko" />
+          <LocalizedResourcesReference Language="ms" LocalizedResourcesReferenceId="api.localaccountpasswordreset.invite.ms" />
+          <LocalizedResourcesReference Language="th" LocalizedResourcesReferenceId="api.localaccountpasswordreset.invite.th" />
+          <LocalizedResourcesReference Language="vi" LocalizedResourcesReferenceId="api.localaccountpasswordreset.invite.vi" />
+          <LocalizedResourcesReference Language="zh-CN" LocalizedResourcesReferenceId="api.localaccountpasswordreset.invite.zh-CN" />
+          <LocalizedResourcesReference Language="zh-TW" LocalizedResourcesReferenceId="api.localaccountpasswordreset.invite.zh-TW" />
         </LocalizedResourcesReferences>
       </ContentDefinition>
       <ContentDefinition Id="api.localaccountpasswordreset.invite_confirm">
@@ -341,6 +399,14 @@
         </Metadata>
         <LocalizedResourcesReferences MergeBehavior="Prepend">
           <LocalizedResourcesReference Language="en" LocalizedResourcesReferenceId="api.localaccountpasswordreset.invite_confirm.en" />
+          <LocalizedResourcesReference Language="ja" LocalizedResourcesReferenceId="api.localaccountpasswordreset.invite_confirm.ja" />
+          <LocalizedResourcesReference Language="ko" LocalizedResourcesReferenceId="api.localaccountpasswordreset.invite_confirm.ko" />
+          <LocalizedResourcesReference Language="ms" LocalizedResourcesReferenceId="api.localaccountpasswordreset.invite_confirm.ms" />
+          <LocalizedResourcesReference Language="th" LocalizedResourcesReferenceId="api.localaccountpasswordreset.invite_confirm.th" />
+          <LocalizedResourcesReference Language="vi" LocalizedResourcesReferenceId="api.localaccountpasswordreset.invite_confirm.vi" />
+          <LocalizedResourcesReference Language="zh-CN" LocalizedResourcesReferenceId="api.localaccountpasswordreset.invite_confirm.zh-CN" />
+          <LocalizedResourcesReference Language="zh-TW" LocalizedResourcesReferenceId="api.localaccountpasswordreset.invite_confirm.zh-TW" />
+
         </LocalizedResourcesReferences>
       </ContentDefinition>
       <ContentDefinition Id="api.localaccountpasswordreset.invite_confirm_end">
@@ -352,6 +418,13 @@
         </Metadata>
         <LocalizedResourcesReferences MergeBehavior="Prepend">
           <LocalizedResourcesReference Language="en" LocalizedResourcesReferenceId="api.localaccountpasswordreset.invite_confirm_end.en" />
+          <LocalizedResourcesReference Language="ja" LocalizedResourcesReferenceId="api.localaccountpasswordreset.invite_confirm_end.ja" />
+          <LocalizedResourcesReference Language="ko" LocalizedResourcesReferenceId="api.localaccountpasswordreset.invite_confirm_end.ko" />
+          <LocalizedResourcesReference Language="ms" LocalizedResourcesReferenceId="api.localaccountpasswordreset.invite_confirm_end.ms" />
+          <LocalizedResourcesReference Language="th" LocalizedResourcesReferenceId="api.localaccountpasswordreset.invite_confirm_end.th" />
+          <LocalizedResourcesReference Language="vi" LocalizedResourcesReferenceId="api.localaccountpasswordreset.invite_confirm_end.vi" />
+          <LocalizedResourcesReference Language="zh-CN" LocalizedResourcesReferenceId="api.localaccountpasswordreset.invite_confirm_end.zh-CN" />
+          <LocalizedResourcesReference Language="zh-TW" LocalizedResourcesReferenceId="api.localaccountpasswordreset.invite_confirm_end.zh-TW" />
         </LocalizedResourcesReferences>
       </ContentDefinition>
       <ContentDefinition Id="api.selfasserted">
@@ -363,6 +436,13 @@
         </Metadata>
         <LocalizedResourcesReferences MergeBehavior="Prepend">
           <LocalizedResourcesReference Language="en" LocalizedResourcesReferenceId="api.selfasserted.en" />
+          <LocalizedResourcesReference Language="ja" LocalizedResourcesReferenceId="api.selfasserted.ja" />
+          <LocalizedResourcesReference Language="ko" LocalizedResourcesReferenceId="api.selfasserted.ko" />
+          <LocalizedResourcesReference Language="ms" LocalizedResourcesReferenceId="api.selfasserted.ms" />
+          <LocalizedResourcesReference Language="th" LocalizedResourcesReferenceId="api.selfasserted.th" />
+          <LocalizedResourcesReference Language="vi" LocalizedResourcesReferenceId="api.selfasserted.vi" />
+          <LocalizedResourcesReference Language="zh-CN" LocalizedResourcesReferenceId="api.selfasserted.zh-CN" />
+          <LocalizedResourcesReference Language="zh-TW" LocalizedResourcesReferenceId="api.selfasserted.zh-TW" />
         </LocalizedResourcesReferences>
       </ContentDefinition>
       <ContentDefinition Id="api.error">
@@ -400,10 +480,23 @@
         </Metadata>
       </ContentDefinition>
     </ContentDefinitions>
+
+         <!--___________________________________________________________________   LANGUAGES  ________________________________________________________________________________________________________________________  -->
+        <!--SUPPORTED lANGUAGES:  https://support.google.com/googleplay/android-developer/table/4419860?hl=en -->
     <Localization Enabled="true">
+        <!-- Supported Lanauges -->
       <SupportedLanguages DefaultLanguage="en" MergeBehavior="ReplaceAll">
         <SupportedLanguage>en</SupportedLanguage>
+        <SupportedLanguage>ja</SupportedLanguage>
+        <SupportedLanguage>ko</SupportedLanguage>
+        <SupportedLanguage>ms</SupportedLanguage>
+        <SupportedLanguage>th</SupportedLanguage>
+        <SupportedLanguage>vi</SupportedLanguage>
+        <SupportedLanguage>zh-CN</SupportedLanguage>  
+        <SupportedLanguage>zh-TW</SupportedLanguage> 
       </SupportedLanguages>
+        <!--___________________________________________________________________   ENGLISH - en  ________________________________________________________________________________________________________________________  -->
+
       <LocalizedResources Id="api.signuporsignin.en">
         <LocalizedStrings>
           <LocalizedString ElementType="UxElement" StringId="local_intro_email">Sign into your existing account</LocalizedString>
@@ -505,7 +598,740 @@
         </LocalizedStrings>
       </LocalizedResources>
 
+
+
+            <!--___________________________________________________________________   JAPANESE - ja ________________________________________________________________________________________________________________________  -->
+
+      <LocalizedResources Id="api.signuporsignin.ja">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="local_intro_email">既存のアカウントにサインインします</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="remember_me">サインイン状態</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_signin">ログインする</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="createaccount_intro"></LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="createaccount_link">新しいユーザー</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account SignUp -->
+      <!-- Used for Local Account SignUp, Send invite -->
+      <LocalizedResources Id="api.localaccountsignup.invite.ja">
+        <LocalizedStrings>
+          <!-- <LocalizedString ElementType="UxElement" StringId="initial_intro">Please enter your email address so that we may send a confirmation link to your inbox.</LocalizedString> -->
+          <LocalizedString ElementType="UxElement" StringId="initial_intro"></LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="error_fieldIncorrect">おっと。以下を修正する必要があります。</LocalizedString>
+          <LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfClaimsTransformationStringsAreNotEqual">このEメールはすでに登録されています。リピーターとしてサインインします。</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">次</LocalizedString>
+          <!-- <LocalizedString ElementType="UxElement" StringId="verifying_blurb"></LocalizedString> -->
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="email_sent">メールがに送信されました</LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="please_click">！リンクをクリックしてメールアドレスを確認し、続行してください。</LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="intro_message">受信トレイに確認リンクを送信できるように、メールアドレスを入力してください。<</LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="email_not_received">それでも受信トレイにリンクが届かない場合は、以下をクリックしてメールアドレスを再入力してください。</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account SignUp, Show invite confirmation -->
+      <LocalizedResources Id="api.localaccountsignup.invite_confirm.ja">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">本人確認</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">メールを再送</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account SignUp, Show invite confirmation end screen -->
+      <LocalizedResources Id="api.localaccountsignup.invite_confirm_end.ja">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">本人確認</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">継続する</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account SignUp, Invite accepted -->
+      <LocalizedResources Id="api.localaccountsignup.ja">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">新しいアカウントを設定します</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">次</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+
+      <!-- Used for Local Account Password Reset -->
+      <!-- Used for Local Account Password Reset, Send invite -->
+      <LocalizedResources Id="api.localaccountpasswordreset.invite.ja">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">パスワードのリセット</LocalizedString>
+          <LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfClaimsPrincipalDoesNotExist">指定されたメールアドレスのユーザーアカウントが見つかりませんでした。</LocalizedString>
+          <!-- <LocalizedString ElementType="UxElement" StringId="verifying_blurb"></LocalizedString> -->
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="email_sent">パスワードリセットリンクがに送信されました </LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="please_click">！メール内のリンクをクリックして、新しいパスワードを設定してください。</LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="intro_message">登録に使用したメールアドレスを入力してください。</LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="email_not_received">それでも受信トレイにリンクが届かない場合は、以下をクリックしてメールアドレスを再入力してください。</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">Next</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account Password Reset, Show invite confirmation -->
+      <LocalizedResources Id="api.localaccountpasswordreset.invite_confirm.ja">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">パスワードのリセット</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">メールを再送</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account Password Reset, Show invite confirmation end screen -->
+      <LocalizedResources Id="api.localaccountpasswordreset.invite_confirm_end.ja">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">パスワードのリセット</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">継続する</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account Password Reset, Invite accepted -->
+      <LocalizedResources Id="api.localaccountpasswordreset.ja">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">パスワードのリセット</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">完了</LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="password_Change_Complete">パスワードが正常に変更されました！</LocalizedString>
+          <!-- <LocalizedString ElementType="UxElement" StringId="verifying_blurb"></LocalizedString> -->
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account Password Reset, Password change confirmation -->
+      <LocalizedResources Id="api.localaccountpasswordreset.confirm.ja">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">パスワードのリセット</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">ログインに進みます</LocalizedString>
+          <!-- <LocalizedString ElementType="UxElement" StringId="verifying_blurb"></LocalizedString> -->
+        </LocalizedStrings>
+      </LocalizedResources>
+
+      <!-- Used for Social IDP -->
+      <LocalizedResources Id="api.selfasserted.ja">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">以下に詳細を記入してください。</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">次</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+
+        <!--___________________________________________________________________   KOREAN - ko  ________________________________________________________________________________________________________________________  -->
+
+      <LocalizedResources Id="api.signuporsignin.ko">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="local_intro_email">기존 계정에 로그인</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="remember_me">로그인 상태 유지</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_signin">로그인</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="createaccount_intro"></LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="createaccount_link">새로운 사용자</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account SignUp -->
+      <!-- Used for Local Account SignUp, Send invite -->
+      <LocalizedResources Id="api.localaccountsignup.invite.ko">
+        <LocalizedStrings>
+          <!-- <LocalizedString ElementType="UxElement" StringId="initial_intro">Please enter your email address so that we may send a confirmation link to your inbox.</LocalizedString> -->
+          <LocalizedString ElementType="UxElement" StringId="initial_intro"></LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="error_fieldIncorrect">죄송합니다. 다음 사항을 수정해야합니다.</LocalizedString>
+          <LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfClaimsTransformationStringsAreNotEqual">이 이메일은 이미 등록되어 있습니다. 재 방문 사용자로 로그인하십시오.</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">Next</LocalizedString>
+          <!-- <LocalizedString ElementType="UxElement" StringId="verifying_blurb"></LocalizedString> -->
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="email_sent">이메일을 보냈습니다 </LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="please_click">! 링크를 클릭하여 이메일 주소를 확인하고 계속하십시오!</LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="intro_message">받은 편지함으로 확인 링크를 보낼 수 있도록 이메일 주소를 입력하십시오.</LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="email_not_received">받은 편지함에서 링크를받지 못한 경우 아래를 클릭하여 이메일 주소를 다시 입력하십시오.</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account SignUp, Show invite confirmation -->
+      <LocalizedResources Id="api.localaccountsignup.invite_confirm.ko">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">신원 확인</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">이메일 다시 보내기</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account SignUp, Show invite confirmation end screen -->
+      <LocalizedResources Id="api.localaccountsignup.invite_confirm_end.ko">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">신원 확인</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">계속하다</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account SignUp, Invite accepted -->
+      <LocalizedResources Id="api.localaccountsignup.ko">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">새 계정 설정</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">다음</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+
+      <!-- Used for Local Account Password Reset -->
+      <!-- Used for Local Account Password Reset, Send invite -->
+      <LocalizedResources Id="api.localaccountpasswordreset.invite.ko">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">비밀번호 초기화</LocalizedString>
+          <LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfClaimsPrincipalDoesNotExist">제공된 이메일 주소에 대한 사용자 계정을 찾을 수 없습니다.</LocalizedString>
+          <!-- <LocalizedString ElementType="UxElement" StringId="verifying_blurb"></LocalizedString> -->
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="email_sent">비밀번호 재설정 링크가 전송되었습니다 </LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="please_click">! 이메일에있는 링크를 클릭하여 새 비밀번호를 설정하십시오!</LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="intro_message">등록 할 때 사용한 이메일 주소를 입력하십시오.</LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="email_not_received">받은 편지함에서 링크를받지 못한 경우 아래를 클릭하여 이메일 주소를 다시 입력하십시오.</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">다음</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account Password Reset, Show invite confirmation -->
+      <LocalizedResources Id="api.localaccountpasswordreset.invite_confirm.ko">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">비밀번호 초기화</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">이메일 다시 보내기</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account Password Reset, Show invite confirmation end screen -->
+      <LocalizedResources Id="api.localaccountpasswordreset.invite_confirm_end.ko">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">비밀번호 초기화</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">계속하다</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account Password Reset, Invite accepted -->
+      <LocalizedResources Id="api.localaccountpasswordreset.ko">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">비밀번호 초기화</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">끝난</LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="password_Change_Complete">암호가 성공적으로 변경되었습니다!</LocalizedString>
+          <!-- <LocalizedString ElementType="UxElement" StringId="verifying_blurb"></LocalizedString> -->
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account Password Reset, Password change confirmation -->
+      <LocalizedResources Id="api.localaccountpasswordreset.confirm.ko">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">비밀번호 초기화</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">로그인 진행</LocalizedString>
+          <!-- <LocalizedString ElementType="UxElement" StringId="verifying_blurb"></LocalizedString> -->
+        </LocalizedStrings>
+      </LocalizedResources>
+
+      <!-- Used for Social IDP -->
+      <LocalizedResources Id="api.selfasserted.ko">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">아래에 세부 정보를 입력하십시오.</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">다음</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+
+
+
+        <!--___________________________________________________________________   MALAY - ms ________________________________________________________________________________________________________________________  -->
+
+      <LocalizedResources Id="api.signuporsignin.ms">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="local_intro_email">Log masuk ke akaun anda yang ada</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="remember_me">Kekal dilog masuk</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_signin">Log masuk</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="createaccount_intro"></LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="createaccount_link">Pengguna baru</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account SignUp -->
+      <!-- Used for Local Account SignUp, Send invite -->
+      <LocalizedResources Id="api.localaccountsignup.invite.ms">
+        <LocalizedStrings>
+          <!-- <LocalizedString ElementType="UxElement" StringId="initial_intro">Please enter your email address so that we may send a confirmation link to your inbox.</LocalizedString> -->
+          <LocalizedString ElementType="UxElement" StringId="initial_intro"></LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="error_fieldIncorrect">Alamak. Perkara berikut perlu diperbaiki.</LocalizedString>
+          <LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfClaimsTransformationStringsAreNotEqual">E-mel ini sudah didaftarkan. Log masuk sebagai pengguna yang kembali.</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">Next</LocalizedString>
+          <!-- <LocalizedString ElementType="UxElement" StringId="verifying_blurb"></LocalizedString> -->
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="email_sent">E-mel telah dihantar ke </LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="please_click">! Klik pada pautan untuk mengesahkan alamat e-mel anda dan teruskan!</LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="intro_message">Masukkan alamat e-mel anda supaya kami dapat menghantar pautan pengesahan ke peti masuk anda.</LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="email_not_received">Sekiranya anda masih belum menerima pautan di peti masuk anda, sila klik di bawah untuk memasukkan semula alamat e-mel anda.</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account SignUp, Show invite confirmation -->
+      <LocalizedResources Id="api.localaccountsignup.invite_confirm.ms">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">Identity Verification</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">Menghantar semula e-mel</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account SignUp, Show invite confirmation end screen -->
+      <LocalizedResources Id="api.localaccountsignup.invite_confirm_end.ms">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">Identity Verification</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">Teruskan</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account SignUp, Invite accepted -->
+      <LocalizedResources Id="api.localaccountsignup.ms">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">Sediakan akaun baru anda</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">Seterusnya</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+
+      <!-- Used for Local Account Password Reset -->
+      <!-- Used for Local Account Password Reset, Send invite -->
+      <LocalizedResources Id="api.localaccountpasswordreset.invite.ms">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">Memadam kata laluan</LocalizedString>
+          <LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfClaimsPrincipalDoesNotExist">Akaun pengguna tidak dapat dijumpai untuk alamat e-mel yang disediakan.</LocalizedString>
+          <!-- <LocalizedString ElementType="UxElement" StringId="verifying_blurb"></LocalizedString> -->
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="email_sent">Pautan penetapan semula kata laluan telah dihantar ke </LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="please_click">! Klik pada pautan dalam e-mel untuk menetapkan kata laluan baru!</LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="intro_message">Masukkan alamat e-mel yang anda gunakan untuk mendaftar.</LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="email_not_received">Sekiranya anda masih belum menerima pautan di peti masuk anda, sila klik di bawah untuk memasukkan semula alamat e-mel anda.</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">Seterusnya</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account Password Reset, Show invite confirmation -->
+      <LocalizedResources Id="api.localaccountpasswordreset.invite_confirm.ms">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">Memadam kata laluan</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">Menghantar semula e-mel</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account Password Reset, Show invite confirmation end screen -->
+      <LocalizedResources Id="api.localaccountpasswordreset.invite_confirm_end.ms">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">Memadam kata laluan</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">Teruskan</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account Password Reset, Invite accepted -->
+      <LocalizedResources Id="api.localaccountpasswordreset.ms">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">Memadam kata laluan</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">Selesai</LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="password_Change_Complete">Kata laluan berjaya diubah!</LocalizedString>
+          <!-- <LocalizedString ElementType="UxElement" StringId="verifying_blurb"></LocalizedString> -->
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account Password Reset, Password change confirmation -->
+      <LocalizedResources Id="api.localaccountpasswordreset.confirm.ms">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">Memadam kata laluan</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">Teruskan log masuk</LocalizedString>
+          <!-- <LocalizedString ElementType="UxElement" StringId="verifying_blurb"></LocalizedString> -->
+        </LocalizedStrings>
+      </LocalizedResources>
+
+      <!-- Used for Social IDP -->
+      <LocalizedResources Id="api.selfasserted.ms">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">Sila berikan butiran di bawah.</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">Seterusnya</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+
+
+
+        <!--___________________________________________________________________   THAI - th  ________________________________________________________________________________________________________________________  -->
+
+      <LocalizedResources Id="api.signuporsignin.th">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="local_intro_email">ลงชื่อเข้าใช้บัญชีที่คุณมีอยู่</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="remember_me">อยู่ในระบบ</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_signin">เข้าสู่ระบบ</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="createaccount_intro"></LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="createaccount_link">ผู้ใช้ใหม่</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account SignUp -->
+      <!-- Used for Local Account SignUp, Send invite -->
+      <LocalizedResources Id="api.localaccountsignup.invite.th">
+        <LocalizedStrings>
+          <!-- <LocalizedString ElementType="UxElement" StringId="initial_intro">Please enter your email address so that we may send a confirmation link to your inbox.</LocalizedString> -->
+          <LocalizedString ElementType="UxElement" StringId="initial_intro"></LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="error_fieldIncorrect">อ๊ะ. สิ่งต่อไปนี้ต้องได้รับการแก้ไข</LocalizedString>
+          <LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfClaimsTransformationStringsAreNotEqual">อีเมลนี้ได้รับการลงทะเบียนแล้ว ลงชื่อเข้าใช้ในฐานะผู้ใช้ที่กลับมา</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">Next</LocalizedString>
+          <!-- <LocalizedString ElementType="UxElement" StringId="verifying_blurb"></LocalizedString> -->
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="email_sent">ส่งอีเมลไปที่แล้ว </LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="please_click">! กรุณาคลิกที่ลิงค์เพื่อยืนยันที่อยู่อีเมลของคุณและดำเนินการต่อ!</LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="intro_message">โปรดป้อนที่อยู่อีเมลของคุณเพื่อที่เราจะได้ส่งลิงค์ยืนยันไปยังกล่องจดหมายของคุณ</LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="email_not_received">หากคุณยังไม่ได้รับลิงก์ในกล่องจดหมายของคุณโปรดคลิกด้านล่างเพื่อป้อนที่อยู่อีเมลของคุณอีกครั้ง</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account SignUp, Show invite confirmation -->
+      <LocalizedResources Id="api.localaccountsignup.invite_confirm.th">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">การยืนยันตัวตน</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">ส่งอีเมลอีกครั้ง</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account SignUp, Show invite confirmation end screen -->
+      <LocalizedResources Id="api.localaccountsignup.invite_confirm_end.th">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">การยืนยันตัวตน</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">ดำเนินการต่อ</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account SignUp, Invite accepted -->
+      <LocalizedResources Id="api.localaccountsignup.th">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">ตั้งค่าบัญชีใหม่ของคุณ</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">ต่อไป</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+
+      <!-- Used for Local Account Password Reset -->
+      <!-- Used for Local Account Password Reset, Send invite -->
+      <LocalizedResources Id="api.localaccountpasswordreset.invite.th">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">รีเซ็ตรหัสผ่าน</LocalizedString>
+          <LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfClaimsPrincipalDoesNotExist">ไม่พบบัญชีผู้ใช้สำหรับที่อยู่อีเมลที่ระบุ</LocalizedString>
+          <!-- <LocalizedString ElementType="UxElement" StringId="verifying_blurb"></LocalizedString> -->
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="email_sent">ลิงก์รีเซ็ตรหัสผ่านถูกส่งไปที่ </LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="please_click">! กรุณาคลิกที่ลิงค์ในอีเมลเพื่อตั้งรหัสผ่านใหม่!</LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="intro_message">ป้อนที่อยู่อีเมลที่คุณใช้ในการลงทะเบียน</LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="email_not_received">หากคุณยังไม่ได้รับลิงก์ในกล่องจดหมายของคุณโปรดคลิกด้านล่างเพื่อป้อนที่อยู่อีเมลของคุณอีกครั้ง</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">ต่อไป</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account Password Reset, Show invite confirmation -->
+      <LocalizedResources Id="api.localaccountpasswordreset.invite_confirm.th">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">รีเซ็ตรหัสผ่าน</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">ส่งอีเมลอีกครั้ง</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account Password Reset, Show invite confirmation end screen -->
+      <LocalizedResources Id="api.localaccountpasswordreset.invite_confirm_end.th">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">รีเซ็ตรหัสผ่าน</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">ดำเนินการต่อ</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account Password Reset, Invite accepted -->
+      <LocalizedResources Id="api.localaccountpasswordreset.th">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">รีเซ็ตรหัสผ่าน</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">เสร็จแล้ว</LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="password_Change_Complete">เปลี่ยนรหัสผ่านสำเร็จ!</LocalizedString>
+          <!-- <LocalizedString ElementType="UxElement" StringId="verifying_blurb"></LocalizedString> -->
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account Password Reset, Password change confirmation -->
+      <LocalizedResources Id="api.localaccountpasswordreset.confirm.th">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">รีเซ็ตรหัสผ่าน</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">เข้าสู่ระบบ</LocalizedString>
+          <!-- <LocalizedString ElementType="UxElement" StringId="verifying_blurb"></LocalizedString> -->
+        </LocalizedStrings>
+      </LocalizedResources>
+
+      <!-- Used for Social IDP -->
+      <LocalizedResources Id="api.selfasserted.th">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">โปรดแจ้งรายละเอียดด้านล่าง</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">ต่อไป</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+
+
+        <!--___________________________________________________________________   VIETNAMESE - vi ________________________________________________________________________________________________________________________  -->
+
+      <LocalizedResources Id="api.signuporsignin.vi">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="local_intro_email">Đăng nhập vào tài khoản hiện có của bạn</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="remember_me">Vẫn đang đăng nhập</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_signin">Đăng nhập</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="createaccount_intro"></LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="createaccount_link">Người dùng mới</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account SignUp -->
+      <!-- Used for Local Account SignUp, Send invite -->
+      <LocalizedResources Id="api.localaccountsignup.invite.vi">
+        <LocalizedStrings>
+          <!-- <LocalizedString ElementType="UxElement" StringId="initial_intro">Please enter your email address so that we may send a confirmation link to your inbox.</LocalizedString> -->
+          <LocalizedString ElementType="UxElement" StringId="initial_intro"></LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="error_fieldIncorrect">Giáo sư. Những điều sau đây cần được sửa chữa.</LocalizedString>
+          <LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfClaimsTransformationStringsAreNotEqual">Email này đã được đăng ký. Đăng nhập với tư cách là người dùng cũ.</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">Kế tiếp</LocalizedString>
+          <!-- <LocalizedString ElementType="UxElement" StringId="verifying_blurb"></LocalizedString> -->
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="email_sent">một email vừa được gửi tới </LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="please_click">! Vui lòng nhấp vào liên kết để xác minh địa chỉ email của bạn và tiếp tục!</LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="intro_message">Vui lòng nhập địa chỉ email của bạn để chúng tôi có thể gửi liên kết xác nhận đến hộp thư đến của bạn.</LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="email_not_received">Nếu bạn vẫn chưa nhận được liên kết trong hộp thư đến của mình, vui lòng nhấp vào bên dưới để nhập lại địa chỉ email của bạn.</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account SignUp, Show invite confirmation -->
+      <LocalizedResources Id="api.localaccountsignup.invite_confirm.vi">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">Xác minh danh tính</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">Gửi lại email</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account SignUp, Show invite confirmation end screen -->
+      <LocalizedResources Id="api.localaccountsignup.invite_confirm_end.vi">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">Xác minh danh tính</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">Tiếp tục</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account SignUp, Invite accepted -->
+      <LocalizedResources Id="api.localaccountsignup.vi">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">Thiết lập tài khoản mới của bạn</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">Kế tiếp</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+
+      <!-- Used for Local Account Password Reset -->
+      <!-- Used for Local Account Password Reset, Send invite -->
+      <LocalizedResources Id="api.localaccountpasswordreset.invite.vi">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">Đặt lại mật khẩu</LocalizedString>
+          <LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfClaimsPrincipalDoesNotExist">Không thể tìm thấy tài khoản người dùng cho địa chỉ email đã cung cấp.</LocalizedString>
+          <!-- <LocalizedString ElementType="UxElement" StringId="verifying_blurb"></LocalizedString> -->
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="email_sent">Một liên kết đặt lại mật khẩu đã được gửi đến </LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="please_click">! Vui lòng nhấp vào liên kết trong email để đặt mật khẩu mới!</LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="intro_message">Nhập địa chỉ email bạn đã sử dụng để đăng ký.</LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="email_not_received">Nếu bạn vẫn chưa nhận được liên kết trong hộp thư đến của mình, vui lòng nhấp vào bên dưới để nhập lại địa chỉ email của bạn.</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">Next</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account Password Reset, Show invite confirmation -->
+      <LocalizedResources Id="api.localaccountpasswordreset.invite_confirm.vi">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">Đặt lại mật khẩu</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">Gửi lại email</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account Password Reset, Show invite confirmation end screen -->
+      <LocalizedResources Id="api.localaccountpasswordreset.invite_confirm_end.vi">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">Đặt lại mật khẩu</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">Tiếp tục</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account Password Reset, Invite accepted -->
+      <LocalizedResources Id="api.localaccountpasswordreset.vi">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">Đặt lại mật khẩu</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">Làm xong</LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="password_Change_Complete">Mật khẩu đã được thay đổi thành công!</LocalizedString>
+          <!-- <LocalizedString ElementType="UxElement" StringId="verifying_blurb"></LocalizedString> -->
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account Password Reset, Password change confirmation -->
+      <LocalizedResources Id="api.localaccountpasswordreset.confirm.vi">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">Đặt lại mật khẩu</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">Tiến hành đăng nhập</LocalizedString>
+          <!-- <LocalizedString ElementType="UxElement" StringId="verifying_blurb"></LocalizedString> -->
+        </LocalizedStrings>
+      </LocalizedResources>
+
+      <!-- Used for Social IDP -->
+      <LocalizedResources Id="api.selfasserted.vi">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">Vui lòng cung cấp thông tin chi tiết bên dưới.</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">Kế tiếp</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+
+        <!--___________________________________________________________________   Chinese (Simplified) - zh-CN  ________________________________________________________________________________________________________________________  -->
+
+      <LocalizedResources Id="api.signuporsignin.zh-CN">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="local_intro_email">登录您的现有帐户</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="remember_me">保持登录</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_signin">登录</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="createaccount_intro"></LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="createaccount_link">新的用户</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account SignUp -->
+      <!-- Used for Local Account SignUp, Send invite -->
+      <LocalizedResources Id="api.localaccountsignup.invite.zh-CN">
+        <LocalizedStrings>
+          <!-- <LocalizedString ElementType="UxElement" StringId="initial_intro">Please enter your email address so that we may send a confirmation link to your inbox.</LocalizedString> -->
+          <LocalizedString ElementType="UxElement" StringId="initial_intro"></LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="error_fieldIncorrect">哎呀。以下问题需要解决。</LocalizedString>
+          <LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfClaimsTransformationStringsAreNotEqual">此邮箱号已被注册。以旧用户身份登录。</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">下一个</LocalizedString>
+          <!-- <LocalizedString ElementType="UxElement" StringId="verifying_blurb"></LocalizedString> -->
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="email_sent">一封电子邮件已经发送至 </LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="please_click">！请单击链接以验证您的电子邮件地址，然后继续！</LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="intro_message">请输入您的电子邮件地址，以便我们将确认链接发送到您的收件箱。</LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="email_not_received">如果您仍然没有收到收件箱中的链接，请单击下面的重新输入您的电子邮件地址。</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account SignUp, Show invite confirmation -->
+      <LocalizedResources Id="api.localaccountsignup.invite_confirm.zh-CN">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">身份验证</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">重发电子邮件</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account SignUp, Show invite confirmation end screen -->
+      <LocalizedResources Id="api.localaccountsignup.invite_confirm_end.zh-CN">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">身份验证</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">继续</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account SignUp, Invite accepted -->
+      <LocalizedResources Id="api.localaccountsignup.zh-CN">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">设置您的新帐户</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">下一个</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+
+      <!-- Used for Local Account Password Reset -->
+      <!-- Used for Local Account Password Reset, Send invite -->
+      <LocalizedResources Id="api.localaccountpasswordreset.invite.zh-CN">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">重设密码</LocalizedString>
+          <LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfClaimsPrincipalDoesNotExist">找不到提供的电子邮件地址的用户帐户。</LocalizedString>
+          <!-- <LocalizedString ElementType="UxElement" StringId="verifying_blurb"></LocalizedString> -->
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="email_sent">密码重置链接已发送至 </LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="please_click">！请单击电子邮件中的链接以设置新密码！</LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="intro_message">输入您用来注册的电子邮件地址。</LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="email_not_received">如果您仍然没有收到收件箱中的链接，请单击下面的重新输入您的电子邮件地址。</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">下一个</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account Password Reset, Show invite confirmation -->
+      <LocalizedResources Id="api.localaccountpasswordreset.invite_confirm.zh-CN">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">重设密码</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">重发电子邮件</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account Password Reset, Show invite confirmation end screen -->
+      <LocalizedResources Id="api.localaccountpasswordreset.invite_confirm_end.zh-CN">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">重设密码</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">继续</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account Password Reset, Invite accepted -->
+      <LocalizedResources Id="api.localaccountpasswordreset.zh-CN">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">重设密码</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">完成了</LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="password_Change_Complete">密码修改成功！</LocalizedString>
+          <!-- <LocalizedString ElementType="UxElement" StringId="verifying_blurb"></LocalizedString> -->
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account Password Reset, Password change confirmation -->
+      <LocalizedResources Id="api.localaccountpasswordreset.confirm.zh-CN">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">重设密码</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">继续登录</LocalizedString>
+          <!-- <LocalizedString ElementType="UxElement" StringId="verifying_blurb"></LocalizedString> -->
+        </LocalizedStrings>
+      </LocalizedResources>
+
+      <!-- Used for Social IDP -->
+      <LocalizedResources Id="api.selfasserted.zh-CN">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">请在下面提供详细信息。</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">下一个</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+
+
+
+        <!--___________________________________________________________________   Chinese (Traditional)	- zh-TW  ________________________________________________________________________________________________________________________  -->
+
+      <LocalizedResources Id="api.signuporsignin.zh-TW">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="local_intro_email">登錄您的現有帳戶</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="remember_me">保持登錄</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_signin">登錄</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="createaccount_intro"></LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="createaccount_link">新的用戶</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account SignUp -->
+      <!-- Used for Local Account SignUp, Send invite -->
+      <LocalizedResources Id="api.localaccountsignup.invite.zh-TW">
+        <LocalizedStrings>
+          <!-- <LocalizedString ElementType="UxElement" StringId="initial_intro">Please enter your email address so that we may send a confirmation link to your inbox.</LocalizedString> -->
+          <LocalizedString ElementType="UxElement" StringId="initial_intro"></LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="error_fieldIncorrect">哎呀。以下問題需要解決。</LocalizedString>
+          <LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfClaimsTransformationStringsAreNotEqual">此郵箱號已被註冊。以舊用戶身份登錄。</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">Next</LocalizedString>
+          <!-- <LocalizedString ElementType="UxElement" StringId="verifying_blurb"></LocalizedString> -->
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="email_sent">一封電子郵件已經發送至 </LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="please_click">！請單擊鏈接以驗證您的電子郵件地址，然後繼續！</LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="intro_message">請輸入您的電子郵件地址，以便我們將確認鏈接發送到您的收件箱。</LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="email_not_received">如果您仍然沒有收到收件箱中的鏈接，請單擊下面的重新輸入您的電子郵件地址。</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account SignUp, Show invite confirmation -->
+      <LocalizedResources Id="api.localaccountsignup.invite_confirm.zh-TW">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">身份驗證</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">重發電子郵件</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account SignUp, Show invite confirmation end screen -->
+      <LocalizedResources Id="api.localaccountsignup.invite_confirm_end.zh-TW">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">身份驗證</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">繼續</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account SignUp, Invite accepted -->
+      <LocalizedResources Id="api.localaccountsignup.zh-TW">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">設置您的新帳戶</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">下一個</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+
+      <!-- Used for Local Account Password Reset -->
+      <!-- Used for Local Account Password Reset, Send invite -->
+      <LocalizedResources Id="api.localaccountpasswordreset.invite.zh-TW">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">重設密碼</LocalizedString>
+          <LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfClaimsPrincipalDoesNotExist">找不到提供的電子郵件地址的用戶帳戶。</LocalizedString>
+          <!-- <LocalizedString ElementType="UxElement" StringId="verifying_blurb"></LocalizedString> -->
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="email_sent">密碼重置鏈接已發送至 </LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="please_click">！請單擊電子郵件中的鏈接以設置新密碼！</LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="intro_message">輸入您用來註冊的電子郵件地址。</LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="email_not_received">如果您仍然沒有收到收件箱中的鏈接，請單擊下面的重新輸入您的電子郵件地址。</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">下一個</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account Password Reset, Show invite confirmation -->
+      <LocalizedResources Id="api.localaccountpasswordreset.invite_confirm.zh-TW">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">重設密碼</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">重發電子郵件</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account Password Reset, Show invite confirmation end screen -->
+      <LocalizedResources Id="api.localaccountpasswordreset.invite_confirm_end.zh-TW">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">重設密碼</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">繼續</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account Password Reset, Invite accepted -->
+      <LocalizedResources Id="api.localaccountpasswordreset.zh-TW">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">重設密碼</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">完成了</LocalizedString>
+          <LocalizedString ElementType="GetLocalizedStringsTransformationClaimType" StringId="password_Change_Complete">密碼修改成功！</LocalizedString>
+          <!-- <LocalizedString ElementType="UxElement" StringId="verifying_blurb"></LocalizedString> -->
+        </LocalizedStrings>
+      </LocalizedResources>
+      <!-- Used for Local Account Password Reset, Password change confirmation -->
+      <LocalizedResources Id="api.localaccountpasswordreset.confirm.zh-TW">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">重設密碼</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">繼續登錄</LocalizedString>
+          <!-- <LocalizedString ElementType="UxElement" StringId="verifying_blurb"></LocalizedString> -->
+        </LocalizedStrings>
+      </LocalizedResources>
+
+      <!-- Used for Social IDP -->
+      <LocalizedResources Id="api.selfasserted.zh-TW">
+        <LocalizedStrings>
+          <LocalizedString ElementType="UxElement" StringId="initial_intro">請在下面提供詳細信息。</LocalizedString>
+          <LocalizedString ElementType="UxElement" StringId="button_continue">下一個</LocalizedString>
+        </LocalizedStrings>
+      </LocalizedResources>
+
     </Localization>
+    <!--___________________________________________________________________   END  ________________________________________________________________________________________________________________________  -->
+
+
   </BuildingBlocks>
   <ClaimsProviders>
 
