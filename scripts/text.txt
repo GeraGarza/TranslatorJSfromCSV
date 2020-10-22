@@ -1,0 +1,300 @@
+Email Address
+Please enter your email
+Username
+Password
+Please enter your user name
+Forgot your password?
+OR
+The user has forgotten their password
+Sign in with your social account
+Please enter your password
+The password you entered is not in the expected format
+Sign in with your user name
+Please enter a valid email address
+We are having trouble signing you in. Please try again later.
+Your password is incorrect.
+We can't seem to find your account.
+Looks like you used an old password.
+Invalid username or password.
+Your account has been locked. Contact your support person to unlock it, then try again.
+Your account is temporarily locked to prevent unauthorized use. Try again later.
+There are too many requests at this moment. Please wait for some time and try again.
+(END OF signuporsignin) Email Address
+Email address that can be used to contact you.
+Please enter a valid email address.
+New Password
+Enter new password
+8-16 characters, containing 3 out of 4 of the following: Lowercase characters, uppercase characters, digits (0-9), and one or more of the following symbols: @  $ % ^ &amp; * - _ + = [ ] { } | \ : ' , ? / ` ~ " ( ) ; .
+Confirm New Password
+Confirm New Password
+8-16 characters, containing 3 out of 4 of the following: Lowercase characters, uppercase characters, digits (0-9), and one or more of the following symbols: @  $ % ^ &amp; * - _ + = [ ] { } | \ : ' , ? / ` ~ " ( ) ; .
+Display Name
+Your display name.
+Surname
+Your surname (also known as family name or last name).
+Given Name
+Your given name (also known as first name).
+One or more fields are filled out incorrectly. Please check your entries and try again.
+The password entry fields do not match. Please enter the same password in both fields and try again.
+A required field is missing. Please fill out all required fields and try again.
+What is this?
+Please wait
+This information is required.
+Change e-mail
+Send new code
+Send verification code
+Verify code
+That code is expired. Please request a new code.
+You've made too many incorrect attempts. Please try again later.
+That code is incorrect. Please try again.
+We are having trouble verifying your email address. Please enter a valid email address and try again.
+There have been too many requests to verify this email address. Please wait a while, then try again.
+Verification code has been sent to your inbox. Please copy it to the input box below.
+Verification code
+Verification is necessary. Please click Send button.
+E-mail address verified. You can now continue.
+There are too many requests at this moment. Please wait for some time and try again.
+Claim not verified: {0}
+A user with the specified ID already exists. Please choose a different one.
+Incorrect pattern for: {0}
+{0} has invalid input.
+Missing required element: {0}
+Error in validation by: {0}
+(END OF localaccountsignup)
+
+HOW TO USE:
+1 - Copy/Paste Section into google translate
+2 - Click 'copy-text' buttom
+3 - (tricky part) Alt + Click on each number in seciton from Template
+4 - delete number and Paste
+5-  undo, then copy/paste new transaltions, repeat
+
+
+
+1-Email Address
+2-Please enter your email
+3-Username
+4-Password
+5-Please enter your user name
+6-Forgot your password?
+7-OR
+8-The user has forgotten their password
+9-Sign in with your social account
+10-Please enter your password
+11-The password you entered is not in the expected format
+12-Sign in with your user name
+13-Please enter a valid email address
+14-We are having trouble signing you in. Please try again later.
+15-Your password is incorrect.
+16-We can't seem to find your account.
+17-Looks like you used an old password.
+18-Invalid username or password.
+19-Your account has been locked. Contact your support person to unlock it, then try again.
+20-Your account is temporarily locked to prevent unauthorized use. Try again later.
+21-There are too many requests at this moment. Please wait for some time and try again.
+
+
+22- Email Address
+23 - Email address that can be used to contact you.
+24- Please enter a valid email address.
+25-New Password
+26-Enter new password
+27-8-16 characters, containing 3 out of 4 of the following: Lowercase characters, uppercase characters, digits (0-9), and one or more of the following symbols: @  $ % ^ &amp; * - _ + = [ ] { } | \ : ' , ? / ` ~ " ( ) ; .
+28-Confirm New Password
+29-Confirm New Password
+30-8-16 characters, containing 3 out of 4 of the following: Lowercase characters, uppercase characters, digits (0-9), and one or more of the following symbols: @  $ % ^ &amp; * - _ + = [ ] { } | \ : ' , ? / ` ~ " ( ) ; .
+31-Display Name
+32-Your display name.
+33-Surname
+34-Your surname (also known as family name or last name).
+35-Given Name
+36-Your given name (also known as first name).
+37-One or more fields are filled out incorrectly. Please check your entries and try again.
+38-The password entry fields do not match. Please enter the same password in both fields and try again.
+39-A required field is missing. Please fill out all required fields and try again.
+40-What is this?
+41-Please wait
+42-This information is required.
+43-Change e-mail
+44-Send new code
+45-Send verification code
+46-Verify code
+47-That code is expired. Please request a new code.
+48-You've made too many incorrect attempts. Please try again later.
+49-That code is incorrect. Please try again.
+50-We are having trouble verifying your email address. Please enter a valid email address and try again.
+51-There have been too many requests to verify this email address. Please wait a while, then try again.
+52-Verification code has been sent to your inbox. Please copy it to the input box below.
+53-Verification code
+54-Verification is necessary. Please click Send button.
+55-E-mail address verified. You can now continue.
+56-There are too many requests at this moment. Please wait for some time and try again.
+57-Claim not verified: {0}
+
+
+58-A user with the specified ID already exists. Please choose a different one.
+59-Incorrect pattern for: {0}
+60-{0} has invalid input.
+61-Missing required element: {0}
+62-Error in validation by: {0}
+
+
+
+-----------------------------------------------------------------------------------
+
+
+
+
+					<LocalizedString ElementType="UxElement" StringId="logonIdentifier_email">01</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="requiredField_email">02</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="logonIdentifier_username">03</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="password">04</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="requiredField_username">05</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="forgotpassword_link">06</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="divider_title">07</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="cancel_message">08</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="social_intro">09</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="requiredField_password">10</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="invalid_password">11</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="local_intro_username">12</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="invalid_email">13</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="unknown_error">14</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="email_pattern">^[a-zA-Z0-9.!$%&amp;'^_`{}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$</LocalizedString>
+					<LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfInvalidPassword">15</LocalizedString>
+					<LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfClaimsPrincipalDoesNotExist">16</LocalizedString>
+					<LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfOldPasswordUsed">17</LocalizedString>
+					<LocalizedString ElementType="ErrorMessage" StringId="DefaultMessage">18</LocalizedString>
+					<LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfUserAccountDisabled">19</LocalizedString>
+					<LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfUserAccountLocked">20</LocalizedString>
+					<LocalizedString ElementType="ErrorMessage" StringId="AADRequestsThrottled">21</LocalizedString>
+
+
+
+
+
+
+					<LocalizedString ElementType="ClaimType" ElementId="email" StringId="DisplayName">22</LocalizedString>
+					<LocalizedString ElementType="ClaimType" ElementId="email" StringId="UserHelpText">23</LocalizedString>
+					<LocalizedString ElementType="ClaimType" ElementId="email" StringId="PatternHelpText">24</LocalizedString>
+					<LocalizedString ElementType="ClaimType" ElementId="newPassword" StringId="DisplayName">25</LocalizedString>
+					<LocalizedString ElementType="ClaimType" ElementId="newPassword" StringId="UserHelpText">26</LocalizedString>
+					<LocalizedString ElementType="ClaimType" ElementId="newPassword" StringId="PatternHelpText">27</LocalizedString>
+					<LocalizedString ElementType="ClaimType" ElementId="reenterPassword" StringId="DisplayName">28</LocalizedString>
+					<LocalizedString ElementType="ClaimType" ElementId="reenterPassword" StringId="UserHelpText">29</LocalizedString>
+					<LocalizedString ElementType="ClaimType" ElementId="reenterPassword" StringId="PatternHelpText">30</LocalizedString>
+					<LocalizedString ElementType="ClaimType" ElementId="displayName" StringId="DisplayName">31</LocalizedString>
+					<LocalizedString ElementType="ClaimType" ElementId="displayName" StringId="UserHelpText">32</LocalizedString>
+					<LocalizedString ElementType="ClaimType" ElementId="surname" StringId="DisplayName">33</LocalizedString>
+					<LocalizedString ElementType="ClaimType" ElementId="surname" StringId="UserHelpText">34</LocalizedString>
+					<LocalizedString ElementType="ClaimType" ElementId="givenName" StringId="DisplayName">35</LocalizedString>
+					<LocalizedString ElementType="ClaimType" ElementId="givenName" StringId="UserHelpText">36</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="error_fieldIncorrect">37</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="error_passwordEntryMismatch">38</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="error_requiredFieldMissing">39</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="helplink_text">40</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="preloader_alt">41</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="required_field">42</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="ver_but_edit">43</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="ver_but_resend">44</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="ver_but_send">45</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="ver_but_verify">46</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="ver_fail_code_expired">47</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="ver_fail_no_retry">48</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="ver_fail_retry">49</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="ver_fail_server">50</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="ver_fail_throttled">51</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="ver_info_msg">52</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="ver_input">53</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="ver_intro_msg">54</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="ver_success_msg">55</LocalizedString>
+					<LocalizedString ElementType="ErrorMessage" StringId="ServiceThrottled">56</LocalizedString>
+					<LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfClaimNotVerified">57</LocalizedString>
+					<LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfClaimsPrincipalAlreadyExists">58</LocalizedString>
+					<LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfIncorrectPattern">59</LocalizedString>
+					<LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfInvalidInput">60</LocalizedString>
+					<LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfMissingRequiredElement">61</LocalizedString>
+					<LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfValidationError">62</LocalizedString>
+
+
+
+
+
+
+
+
+
+--------------------  Template (Just in case) ------------------------------------
+
+
+
+
+					<LocalizedString ElementType="UxElement" StringId="logonIdentifier_email">01</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="requiredField_email">02</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="logonIdentifier_username">03</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="password">04</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="requiredField_username">05</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="forgotpassword_link">06</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="divider_title">07</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="cancel_message">08</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="social_intro">09</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="requiredField_password">10</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="invalid_password">11</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="local_intro_username">12</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="invalid_email">13</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="unknown_error">14</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="email_pattern">^[a-zA-Z0-9.!$%&amp;'^_`{}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$</LocalizedString>
+					<LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfInvalidPassword">15</LocalizedString>
+					<LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfClaimsPrincipalDoesNotExist">16</LocalizedString>
+					<LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfOldPasswordUsed">17</LocalizedString>
+					<LocalizedString ElementType="ErrorMessage" StringId="DefaultMessage">18</LocalizedString>
+					<LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfUserAccountDisabled">19</LocalizedString>
+					<LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfUserAccountLocked">20</LocalizedString>
+					<LocalizedString ElementType="ErrorMessage" StringId="AADRequestsThrottled">21</LocalizedString>
+
+
+
+
+
+
+					<LocalizedString ElementType="ClaimType" ElementId="email" StringId="DisplayName">22</LocalizedString>
+					<LocalizedString ElementType="ClaimType" ElementId="email" StringId="UserHelpText">23</LocalizedString>
+					<LocalizedString ElementType="ClaimType" ElementId="email" StringId="PatternHelpText">24</LocalizedString>
+					<LocalizedString ElementType="ClaimType" ElementId="newPassword" StringId="DisplayName">25</LocalizedString>
+					<LocalizedString ElementType="ClaimType" ElementId="newPassword" StringId="UserHelpText">26</LocalizedString>
+					<LocalizedString ElementType="ClaimType" ElementId="newPassword" StringId="PatternHelpText">27</LocalizedString>
+					<LocalizedString ElementType="ClaimType" ElementId="reenterPassword" StringId="DisplayName">28</LocalizedString>
+					<LocalizedString ElementType="ClaimType" ElementId="reenterPassword" StringId="UserHelpText">29</LocalizedString>
+					<LocalizedString ElementType="ClaimType" ElementId="reenterPassword" StringId="PatternHelpText">30</LocalizedString>
+					<LocalizedString ElementType="ClaimType" ElementId="displayName" StringId="DisplayName">31</LocalizedString>
+					<LocalizedString ElementType="ClaimType" ElementId="displayName" StringId="UserHelpText">32</LocalizedString>
+					<LocalizedString ElementType="ClaimType" ElementId="surname" StringId="DisplayName">33</LocalizedString>
+					<LocalizedString ElementType="ClaimType" ElementId="surname" StringId="UserHelpText">34</LocalizedString>
+					<LocalizedString ElementType="ClaimType" ElementId="givenName" StringId="DisplayName">35</LocalizedString>
+					<LocalizedString ElementType="ClaimType" ElementId="givenName" StringId="UserHelpText">36</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="error_fieldIncorrect">37</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="error_passwordEntryMismatch">38</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="error_requiredFieldMissing">39</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="helplink_text">40</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="preloader_alt">41</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="required_field">42</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="ver_but_edit">43</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="ver_but_resend">44</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="ver_but_send">45</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="ver_but_verify">46</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="ver_fail_code_expired">47</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="ver_fail_no_retry">48</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="ver_fail_retry">49</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="ver_fail_server">50</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="ver_fail_throttled">51</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="ver_info_msg">52</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="ver_input">53</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="ver_intro_msg">54</LocalizedString>
+					<LocalizedString ElementType="UxElement" StringId="ver_success_msg">55</LocalizedString>
+					<LocalizedString ElementType="ErrorMessage" StringId="ServiceThrottled">56</LocalizedString>
+					<LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfClaimNotVerified">57</LocalizedString>
+					<LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfClaimsPrincipalAlreadyExists">58</LocalizedString>
+					<LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfIncorrectPattern">59</LocalizedString>
+					<LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfInvalidInput">60</LocalizedString>
+					<LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfMissingRequiredElement">61</LocalizedString>
+					<LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfValidationError">62</LocalizedString>
+
